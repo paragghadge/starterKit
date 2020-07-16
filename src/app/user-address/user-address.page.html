@@ -1,0 +1,60 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Address</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="page-bg-color">
+	<div class="top-cls"></div>
+	<div class="bottom-cls">
+		<ion-card class="container-cls">
+
+			<ion-card-content>
+				<form [formGroup]="addressForm">
+					<ion-item class="ion-margin-bottom">
+						<ion-textarea placeholder="Move pin to set delivery location." formControlName="gpsLocation">
+						</ion-textarea>
+					</ion-item>
+					<div class="gps-class ion-margin-bottom">
+						<ion-icon color="primary" name="locate" slot="start" class="input-icon"></ion-icon>
+						<span>Use Current Location Using GPS</span>
+					</div>
+
+					<ion-item class="ion-margin-bottom">
+						<ion-input type="text" placeholder="Apartment/Society" formControlName="appartmentName">
+						</ion-input>
+					</ion-item>
+
+					<ion-row class="ion-margin-bottom">
+						<ion-col>
+							<ion-item>
+								<ion-input type="text" placeholder="Tower/Block" formControlName="tower"></ion-input>
+							</ion-item>
+						</ion-col>
+						<ion-col>
+							<ion-item>
+								<ion-input type="text" placeholder="Flat/House No" formControlName="flatNo"></ion-input>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+
+					<ion-item class="ion-margin-bottom">
+						<ion-input type="text" placeholder="Address" formControlName="address"></ion-input>
+					</ion-item>
+
+					<ion-item class="ion-margin-bottom">
+						<ion-input type="text" placeholder="Landmark / Instructions" formControlName="landmark">
+						</ion-input>
+					</ion-item>
+
+					<ion-button expand="full" class="login-btn" [disabled]="addressForm.invalid" (click)="openModal()">
+						Confirm Your Location
+					</ion-button>
+				</form>
+			</ion-card-content>
+		</ion-card>
+	</div>
+</ion-content>

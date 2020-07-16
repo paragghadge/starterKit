@@ -1,0 +1,24 @@
+.container-cls {
+	// top: 50px !important;
+	box-shadow: none;
+}
+.service-container {
+	height: 100px;
+	width: 100px;
+}
+.service-item {
+	height: 100%;
+	width: 100%;
+	// border: 1px solid #7683fe;
+	border-radius: 11px;
+}
+.is-active {
+	color: #ffffff;
+	background: transparent linear-gradient(190deg, #7fa3fe 0%, #995cf9 100%) 0% 0% no-repeat padding-box !important;
+	border: 1px solid #7683fe;
+	border-radius: 11px;
+}
+.fee-cls {
+	font-weight: bold;
+	color: #000;
+}

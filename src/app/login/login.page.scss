@@ -1,0 +1,92 @@
+.page-bg-color {
+	--background: transparent linear-gradient(184deg, #7da7ff 0%, #a262f8 47%, #a96fe9 100%) 0% 0% no-repeat padding-box;
+}
+
+.login-card {
+	top: 15%;
+	border-radius: 30px;
+}
+
+.login-header {
+	text-align: center;
+	font-weight: bold;
+}
+
+.login-item-margin {
+	margin-top: 4%;
+}
+.remember-me {
+	float: left;
+	width: 40%;
+	margin-left: 8px;
+}
+.remember-me-chkbx {
+	height: 14px;
+	width: 14px;
+}
+.remember-me-lbl {
+	margin-left: 2%;
+}
+.forgot-pass {
+	text-decoration: none;
+	float: right;
+	text-align: end;
+	width: 40%;
+}
+.login-btn {
+	margin-top: 20%;
+	height: 36px !important;
+	font-size: 12px !important;
+	text-transform: capitalize !important;
+	--background: transparent linear-gradient(195deg, #7fa3fe 0%, #995cf9 100%) 0% 0% no-repeat padding-box;
+	box-shadow: -6px -6px 10px;
+}
+.ion-input-box {
+	border-radius: 25px !important;
+	font-size: 16px !important;
+	margin-bottom: 6px;
+	height: 40px;
+	box-shadow: 0px 3px 6px #00000029;
+}
+.sign-up {
+	text-align: center;
+}
+.lbl {
+	text-decoration: none;
+}
+.finger-print {
+	font-size: 36px;
+}
+.other-login {
+	margin-top: 40%;
+	color: #fff;
+	text-align: center;
+}
+.or {
+}
+.or-lbl {
+}
+.mail-fb {
+	.fb-cls {
+		margin-left: 36px;
+	}
+}
+.login-with-cls {
+	font-size: 14px;
+}
+
+.eye-icon {
+	margin-right: -9px !important;
+	font-size: 24px !important;
+}
+
+.icon-margin {
+	margin-right: 2px !important;
+	margin-top: -4px !important;
+	margin-left: -12px;
+	font-size: 30px;
+}
+
+.input-margin {
+	margin-bottom: 14px !important;
+}

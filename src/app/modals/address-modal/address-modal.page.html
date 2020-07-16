@@ -1,0 +1,50 @@
+<ion-content class="ion-padding custom-modal">
+
+	<div class="address-top-cls">
+		<ion-grid>
+			<ion-row>
+				<ion-col size="3">
+					<div class="icon-container">
+						<ion-icon name="location-outline"></ion-icon>
+					</div>
+				</ion-col>
+				<ion-col size="9">
+					<h3>Delivery Location</h3>
+					<div class="address-cls">{{addressData}}</div>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+	<div class="bottom">
+		<ion-row>
+			<ion-col text-center>
+				<ion-button class="address-btn-cls" (click)="closeModal('edit')">Edit</ion-button>
+			</ion-col>
+			<ion-col text-center>
+				<ion-button class="address-btn-cls" (click)="closeModal('save')">Save</ion-button>
+			</ion-col>
+		</ion-row>
+	</div>
+	<!-- <ion-card class="container-cls">
+
+		<ion-card-content> -->
+	<!-- <ion-row>
+		<ion-col text-center>
+			ID : {{modelId}}
+		</ion-col>
+	</ion-row>
+	<ion-row class="bottom-cls">
+		<ion-col text-center>
+			<ion-button (click)="closeModal()">Edit</ion-button>
+			<ion-button (click)="closeModal()">Save</ion-button>
+		</ion-col>
+	</ion-row> -->
+	<!-- </ion-card-content>
+	</ion-card> -->
+	<!-- <ion-grid>
+
+		
+		
+	</ion-grid> -->
+
+</ion-content>

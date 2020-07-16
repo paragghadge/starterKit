@@ -1,0 +1,104 @@
+ion-toolbar {
+	--color: #ffffff;
+	--background: transparent linear-gradient(223deg, #7fa3fe 0%, #995cf9 100%) 0% 0% no-repeat padding-box;
+}
+
+// Pregress Bar CSS
+.progress-controller {
+	width: 100%;
+	counter-reset: step;
+}
+.steps {
+	content: counter(step);
+	counter-increment: step;
+	height: 30px;
+	width: 30px;
+	border: 2px solid #bebebe;
+	border-radius: 50%;
+	line-height: 25px;
+	background: white;
+	color: #bebebe;
+	text-align: center;
+	font-weight: bold;
+}
+.step-connector {
+	height: 4px;
+	width: 38%;
+	background: #979797;
+	margin-top: 13px;
+}
+.active {
+	color: #ffffff;
+	background: transparent linear-gradient(190deg, #7fa3fe 0%, #995cf9 100%) 0% 0% no-repeat padding-box !important;
+}
+// End of Pregress Bar CSS
+
+.container-cls {
+	// top: 50px !important;
+	box-shadow: none;
+}
+
+.gps-class {
+	color: #000000;
+	.time-cls {
+		font-size: 24px;
+	}
+	.header-cls {
+		font-size: 20px !important;
+		font-weight: bold;
+		margin-left: 10px;
+	}
+	.apply-cls {
+		color: #5d6dff;
+		float: right !important;
+		font-size: 16px;
+	}
+}
+
+.login-btn {
+	margin-top: 20%;
+	height: 36px !important;
+	font-size: 12px !important;
+	text-transform: capitalize !important;
+	--background: transparent linear-gradient(195deg, #7fa3fe 0%, #995cf9 100%) 0% 0% no-repeat padding-box;
+	box-shadow: -6px -6px 10px;
+}
+
+.item-native {
+	padding: 0 !important;
+}
+ion-datetime {
+	padding: 0 !important;
+}
+ion-toggle {
+	padding: 5px !important;
+}
+.day-holder {
+	height: 30px !important;
+}
+.service-container {
+	height: 100px;
+	width: 100px;
+}
+.image-medicine {
+	background-image: url("./../../../assets/service-items/Medicine.png") ;
+}
+.selected-image-medicine {
+	background-image: url("./../../../assets/service-items/Selected-Medicine.png");
+}
+.service-item {
+	height: 100%;
+	width: 100%;
+	// border: 1px solid #7683fe;
+	border-radius: 11px;
+}
+.is-active {
+	color: #ffffff;
+	background: transparent linear-gradient(190deg, #7fa3fe 0%, #995cf9 100%) 0% 0% no-repeat padding-box !important;
+	border: 1px solid #7683fe;
+	border-radius: 11px;
+}
+.fee-cls {
+	font-weight: bold;
+	color: #000;
+}

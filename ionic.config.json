@@ -1,0 +1,7 @@
+{
+	"name": "DailyAid",
+	"integrations": {
+		"cordova": {}
+	},
+	"type": "angular"
+}

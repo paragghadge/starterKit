@@ -1,0 +1,80 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Select Services</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-card class="container-cls">
+		<ion-grid>
+			<ion-row class="ion-margin-bottom">
+				<ion-col class="">
+					<div class="service-container" (click)="onClickItem('Medicine')">
+						<img *ngIf="serviceItems.indexOf('Medicine') > -1" class="service-item"
+							src="./../../../assets/service-items/Selected-Medicine.png">
+						<img *ngIf="serviceItems.indexOf('Medicine') === -1" class="service-item"
+							src="./../../../assets/service-items/Medicine.png">
+					</div>
+				</ion-col>
+				<ion-col>
+					<div class="service-container" (click)="onClickItem('Milk')">
+						<img *ngIf="serviceItems.indexOf('Milk') > -1" class=" service-item"
+							src="./../../../assets/service-items/Selected-Milk.png">
+						<img *ngIf="serviceItems.indexOf('Milk') === -1" class=" service-item"
+							src="./../../../assets/service-items/Milk.png">
+					</div>
+				</ion-col>
+				<ion-col>
+					<div class="service-container" (click)="onClickItem('Grocery')">
+						<img *ngIf="serviceItems.indexOf('Grocery') > -1" class="service-item"
+							src="./../../../assets/service-items/Selected-Grocery.png">
+						<img *ngIf="serviceItems.indexOf('Grocery') === -1" class="service-item"
+							src="./../../../assets/service-items/Grocery.png">
+					</div>
+				</ion-col>
+			</ion-row>
+			<ion-row class="ion-margin-bottom">
+				<ion-col class="">
+					<div class="service-container" (click)="onClickItem('Laundry')">
+						<img *ngIf="serviceItems.indexOf('Laundry') > -1" class="service-item"
+							src="./../../../assets/service-items/Selected-Laundry.png">
+						<img *ngIf="serviceItems.indexOf('Laundry') === -1" class="service-item"
+							src="./../../../assets/service-items/Laundry.png">
+					</div>
+				</ion-col>
+				<ion-col>
+					<div class="service-container" (click)="onClickItem('Restaurant')">
+						<img *ngIf="serviceItems.indexOf('Restaurant') > -1" class="service-item"
+							src="./../../../assets/service-items/Selected-Restaurant.png">
+						<img *ngIf="serviceItems.indexOf('Restaurant') === -1" class="service-item"
+							src="./../../../assets/service-items/Restaurant.png">
+					</div>
+				</ion-col>
+				<ion-col>
+					<div class="service-container" (click)="onClickItem('Newspaper')">
+						<img *ngIf="serviceItems.indexOf('Newspaper') > -1" class="service-item"
+							src="./../../../assets/service-items/Selected-Newspaper.png">
+						<img *ngIf="serviceItems.indexOf('Newspaper') === -1" class="service-item"
+							src="./../../../assets/service-items/Newspaper.png">
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+		<ion-row class="ion-margin-bottom">
+			<ion-col class="ion-float-left">
+				<div class="fee-cls">One Time Setup Fee</div>
+			</ion-col>
+			<ion-col class="ion-text-end">
+				<div>1000.00</div>
+			</ion-col>
+		</ion-row>
+
+		<ion-button expand="full" class="login-btn" (click)="onClickPayment()" shape="round">Proceed To Payment
+		</ion-button>
+	</ion-card>
+</ion-content>

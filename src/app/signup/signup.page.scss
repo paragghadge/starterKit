@@ -1,0 +1,51 @@
+.page-bg-color {
+	font-size: 16px !important;
+	--background: transparent linear-gradient(184deg, #7da7ff 0%, #a262f8 47%, #a96fe9 100%) 0% 0% no-repeat padding-box;
+}
+
+.login-card {
+	box-shadow: none;
+	background: #ffffff;
+}
+
+.header-cls {
+	text-align: center;
+	font-weight: bold;
+}
+
+.agree-chkbx {
+	height: 14px;
+	width: 14px;
+}
+
+.agree-lbl {
+	margin-left: 6px;
+}
+.txt-cls {
+	color: #707070;
+}
+
+.lbl-cls {
+	margin-left: 16px;
+	margin-top: 16px;
+	color: #5d6dff;
+}
+
+.input-icon {
+	font-size: 26px;
+	margin: 0 5px 0 0 !important;
+}
+.star-lbl {
+	color: #ff0000;
+}
+
+.other-login {
+	text-align: center;
+}
+
+.mail-fb {
+	font-size: 36px;
+	.fb-cls {
+		margin-left: 36px;
+	}
+}

@@ -1,0 +1,35 @@
+.page-bg-color {
+	font-size: 16px !important;
+	// --background: transparent linear-gradient(184deg, #7da7ff 0%, #a262f8 47%, #a96fe9 100%) 0% 0% no-repeat padding-box;
+}
+
+ion-toolbar {
+	--color: #ffffff;
+	--background: transparent linear-gradient(223deg, #7fa3fe 0%, #995cf9 100%) 0% 0% no-repeat padding-box;
+}
+
+.top-cls {
+	height: 30%;
+}
+.bottom-cls {
+	height: 70%;
+	background: #fff;
+}
+
+.container-cls {
+	top: 50px !important;
+	box-shadow: none;
+}
+
+.gps-class {
+	margin-top: 12px;
+	color: #000000;
+}
+.login-btn {
+	margin-top: 20%;
+	height: 36px !important;
+	font-size: 12px !important;
+	text-transform: capitalize !important;
+	--background: transparent linear-gradient(195deg, #7fa3fe 0%, #995cf9 100%) 0% 0% no-repeat padding-box;
+	box-shadow: -6px -6px 10px;
+}

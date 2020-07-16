@@ -1,0 +1,56 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>items-modal</ion-title>
+		<ion-buttons slot="end">
+			<ion-button class="address-btn-cls" (click)="closeModal('close')">Close</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<ion-item lines="none" class="restaurant-tem-cls ion-margin-bottom" *ngFor="let item of menuItems">
+			<ion-avatar slot="start" class="image-container">
+				<img src="../../../assets/service-items/Grocery.png">
+			</ion-avatar>
+			<ion-label>
+				<p class="header-cls">{{item.name}}</p>
+				<app-rating class="rating-container" [rating]="item.rating" [isDisabled]="false">
+				</app-rating>
+				<p class="text-cls">{{item.votes}} votes</p>
+				<p class="header-cls">Rs. {{item.price}}</p>
+
+			</ion-label>
+			<ion-button *ngIf="item.count === 0" class="address-btn-cls" (click)="addQuantity(item.id)">Add
+				<ion-icon slot="end" name="add-outline"></ion-icon>
+			</ion-button>
+
+			<div class="count" *ngIf="item.count != 0">
+				<ion-icon class="add-cls ion-float-left" name="remove-circle" (click)="removeQuantity(item.id)">
+				</ion-icon>
+				<span class="item-count">
+					{{item.count}}
+				</span>
+				<ion-icon class="add-cls ion-float-right" name="add-circle" (click)="addQuantity(item.id)"></ion-icon>
+			</div>
+		</ion-item>
+	</ion-list>
+
+</ion-content>
+
+<ion-footer>
+	<ion-toolbar>
+		<ion-item class="cart-footer-cls" (click)="getTotalAmount()">
+			<ion-label>
+				<p class="footer-cls">{{cart.length}} Items</p>
+				<p class="footer-cls">Rs. {{totalCartAmount}}</p>
+			</ion-label>
+			<ion-label>
+				<p class="footer-cls ion-float-right">View Cart
+					<ion-icon slot="end" class="footer-cls" name="play"></ion-icon>
+				</p>
+			</ion-label>
+		</ion-item>
+	</ion-toolbar>
+</ion-footer>

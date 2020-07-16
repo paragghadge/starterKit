@@ -1,0 +1,207 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Add Company Details</ion-title>
+		<!-- <ion-button slot="end" (click)="next()">Next Step</ion-button> -->
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<!-- Step Progress Bar -->
+	<!-- <ion-row class="progress-controller ion-padding">
+		<div #step1 class="steps">1</div>
+		<div #sc1 class="step-connector"></div>
+		<div #step2 class="steps">2</div>
+		<div #sc2 class="step-connector"></div>
+		<div #step3 class="steps">3</div>
+	</ion-row> -->
+
+	<!-- shop Details Form -->
+	<ion-card class="container-cls">
+
+		<ion-card-content>
+			<form [formGroup]="shopDetailsForm">
+				<ion-item class="ion-margin-bottom">
+					<ion-input type="text" placeholder="Company / Vendor Name" formControlName="company_name">
+					</ion-input>
+				</ion-item>
+
+				<ion-item class="ion-margin-bottom">
+					<ion-input type="text" placeholder="Authorised Person Name"
+						formControlName="authorized_person_name"></ion-input>
+				</ion-item>
+
+				<!-- <div class="gps-class ion-margin-bottom">
+					<ion-icon color="primary" name="locate" slot="start" class="input-icon"></ion-icon>
+					<span>Use Current Location Using GPS</span>
+				</div> -->
+
+				<ion-item class="ion-margin-bottom">
+					<ion-input type="tel" maxLength="10" minlength="10" placeholder="Mobile No."
+						formControlName="mobile_no"></ion-input>
+				</ion-item>
+
+				<ion-item class="ion-margin-bottom">
+					<ion-input type="tel" maxLength="10" minlength="10" placeholder="Alternate Mobile No."
+						formControlName="alternate_mobile_no"></ion-input>
+				</ion-item>
+
+				<!-- Shop timing -->
+				<!-- <div class="gps-class ion-margin-bottom">
+					<ion-icon color="primary" name="time-outline" slot="start" class="time-cls"></ion-icon>
+					<span class="header-cls">Opening Hours</span>
+					<span class="apply-cls">Apply</span>
+				</div>
+
+				<ion-grid>
+					<ion-row>
+						<ion-col size="4">
+							<div class="day-holder">
+								<ion-label class="lbl-cls">Monday</ion-label>
+							</div>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!monday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4">
+							<ion-toggle checked #monday></ion-toggle>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!monday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4"></ion-col>
+					</ion-row>
+				</ion-grid>
+
+				<ion-grid>
+					<ion-row>
+						<ion-col size="4">
+							<div class="day-holder">
+								<ion-label class="lbl-cls">Tuesday</ion-label>
+							</div>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!tuesday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4">
+							<ion-toggle checked #tuesday></ion-toggle>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!tuesday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4"></ion-col>
+					</ion-row>
+				</ion-grid>
+
+				<ion-grid>
+					<ion-row>
+						<ion-col size="4">
+							<div class="day-holder">
+								<ion-label class="lbl-cls">Wednesday</ion-label>
+							</div>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!wednesday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4">
+							<ion-toggle checked #wednesday></ion-toggle>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!wednesday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4"></ion-col>
+					</ion-row>
+				</ion-grid>
+
+				<ion-grid>
+					<ion-row>
+						<ion-col size="4">
+							<div class="day-holder">
+								<ion-label class="lbl-cls">Thursday</ion-label>
+							</div>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!thursday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4">
+							<ion-toggle checked #thursday></ion-toggle>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!thursday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4"></ion-col>
+					</ion-row>
+				</ion-grid>
+
+				<ion-grid>
+					<ion-row>
+						<ion-col size="4">
+							<div class="day-holder">
+								<ion-label class="lbl-cls">Friday</ion-label>
+							</div>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!friday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4">
+							<ion-toggle checked #friday></ion-toggle>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!friday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4"></ion-col>
+					</ion-row>
+				</ion-grid>
+
+				<ion-grid>
+					<ion-row>
+						<ion-col size="4">
+							<div class="day-holder">
+								<ion-label class="lbl-cls">Saturday</ion-label>
+							</div>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!saturday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4">
+							<ion-toggle checked #saturday></ion-toggle>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!saturday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4"></ion-col>
+					</ion-row>
+				</ion-grid>
+
+				<ion-grid>
+					<ion-row>
+						<ion-col size="4">
+							<div class="day-holder">
+								<ion-label class="lbl-cls">sunday</ion-label>
+							</div>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!sunday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4">
+							<ion-toggle checked #sunday></ion-toggle>
+							<ion-item class="ion-no-padding">
+								<ion-datetime [disabled]="!sunday.checked" displayFormat="h:mm a"></ion-datetime>
+							</ion-item>
+						</ion-col>
+						<ion-col size="4"></ion-col>
+					</ion-row>
+				</ion-grid> -->
+
+				<ion-button expand="full" class="login-btn" (click)="onClickContinue()"
+					[disabled]="shopDetailsForm.invalid" shape="round">Continue
+				</ion-button>
+
+			</form>
+		</ion-card-content>
+	</ion-card>
+
+
+</ion-content>
