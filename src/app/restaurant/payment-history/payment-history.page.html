@@ -1,0 +1,344 @@
+<ion-header class="ion-margin-bottom">
+  <ion-toolbar>
+    <ion-toolbar>
+      <ion-title><p align="center">Payment History</p></ion-title>
+    </ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onClickNotification()">
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+  <ion-grid>
+    <ion-row class="" style="padding: 10px;">
+      <ion-col size="4" class="">
+        <a
+          class="tab-text-class"
+          [ngClass]="allTab? 'tab-text-class-active':''"
+          (click)="onClickTabs('All')"
+        >
+          All</a
+        >
+      </ion-col>
+      <ion-col size="4" class="" style="text-align: center;">
+        <a
+          class="tab-text-class"
+          [ngClass]="paidTab? 'tab-text-class-active':''"
+          (click)="onClickTabs('Paid')"
+        >
+          Paid</a
+        >
+      </ion-col>
+      <ion-col size="4" class="" style="text-align: end;">
+        <a
+          class="tab-text-class"
+          [ngClass]="dueTab? 'tab-text-class-active':''"
+          (click)="onClickTabs('Dues')"
+        >
+          Dues</a
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngIf="allTab">
+    <div>
+      <div style="display: flex;">
+        <div class="restaurant-tem-cls" style="display: flex;">
+          <div class="image-container">
+            <ion-avatar slot="start" class="image-avatar">
+              <img src="./../../../assets/img/event4.jpg" />
+            </ion-avatar>
+          </div>
+          <div class="restaurant-container">
+            <ion-label>
+              <p class="header-cls">
+                Vaishali Restaurant
+                <ion-icon
+                  class="ion-float-right"
+                  style="margin-right: 4px;"
+                  name="arrow-up"
+                ></ion-icon>
+              </p>
+
+              <p class="text-cls">Ekbote Colony, Gorpade Peth Pune</p>
+              <div class="rater-cls">
+                <div class="call-dir-cls" slot="end">
+                  <ion-icon
+                    name="call"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                  <ion-icon
+                    name="navigate"
+                    class="ion-margin-start"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                </div>
+              </div>
+            </ion-label>
+          </div>
+        </div>
+        <div lines="none" class="restaurant-small-class">
+          <div>
+            <p class="status-class">
+              STATUS
+            </p>
+            <p style="margin-top: 0px;" class="paid-class">
+              Paid
+            </p>
+            <p class="status-class">
+              100.00
+            </p>
+            <p class="due-date-class">
+              8 May, 2020 1:00 PM
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div class="restaurant-order-cls" style="display: flex;">
+          <div style="margin-left: 5px;">
+            <p style="margin-bottom: 5px;" class="due-date-class">
+              ORDER N 256387
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              Qty 10 /Total R 100
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="height: 20px;"></div>
+    <div>
+      <div style="display: flex;">
+        <div class="restaurant-tem-cls" style="display: flex;">
+          <div class="image-container">
+            <ion-avatar slot="start" class="image-avatar">
+              <img src="./../../../assets/img/event4.jpg" />
+            </ion-avatar>
+          </div>
+          <div class="restaurant-container">
+            <ion-label>
+              <p class="header-cls">
+                SukhSagar Resto
+                <ion-icon
+                  class="ion-float-right"
+                  style="margin-right: 4px;"
+                  name="arrow-up"
+                ></ion-icon>
+              </p>
+
+              <p class="text-cls">Ekbote Colony, Gorpade Peth Pune</p>
+              <div class="rater-cls">
+                <div class="call-dir-cls" slot="end">
+                  <ion-icon
+                    name="call"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                  <ion-icon
+                    name="navigate"
+                    class="ion-margin-start"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                </div>
+              </div>
+            </ion-label>
+          </div>
+        </div>
+        <div lines="none" class="restaurant-small-class">
+          <div>
+            <p class="status-class">
+              STATUS
+            </p>
+            <p style="margin-top: 0;" class="amount-class">
+              Due
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              100.00
+            </p>
+            <p style="margin-bottom: 0;" class="due-date-class">
+              DUE DATE
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              8 May, 2020
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div class="restaurant-order-cls" style="display: flex;">
+          <div style="margin-left: 5px;">
+            <p style="margin-bottom: 5px;" class="due-date-class">
+              ORDER N 256387
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              Qty 10 /Total R 100
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div class="paynow-class">
+          <div style="text-align: center;">
+            <!-- <ion-icon name="cart"></ion-icon> -->
+            <p class="paynow-p">
+              Pay Now
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-list>
+  <ion-list *ngIf="paidTab">
+    <div>
+      <div style="display: flex;">
+        <div class="restaurant-tem-cls" style="display: flex;">
+          <div class="image-container">
+            <ion-avatar slot="start" class="image-avatar">
+              <img src="./../../../assets/img/event4.jpg" />
+            </ion-avatar>
+          </div>
+          <div class="restaurant-container">
+            <ion-label>
+              <p class="header-cls">
+                Vaishali Restaurant
+                <ion-icon
+                  class="ion-float-right"
+                  style="margin-right: 4px;"
+                  name="arrow-up"
+                ></ion-icon>
+              </p>
+
+              <p class="text-cls">Ekbote Colony, Gorpade Peth Pune</p>
+              <div class="rater-cls">
+                <div class="call-dir-cls" slot="end">
+                  <ion-icon
+                    name="call"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                  <ion-icon
+                    name="navigate"
+                    class="ion-margin-start"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                </div>
+              </div>
+            </ion-label>
+          </div>
+        </div>
+        <div lines="none" class="restaurant-small-class">
+          <div>
+            <p class="status-class">
+              STATUS
+            </p>
+            <p style="margin-top: 0px;" class="paid-class">
+              Paid
+            </p>
+            <p class="status-class">
+              100.00
+            </p>
+            <p class="due-date-class">
+              8 May, 2020 1:00 PM
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div class="restaurant-order-cls" style="display: flex;">
+          <div style="margin-left: 5px;">
+            <p style="margin-bottom: 5px;" class="due-date-class">
+              ORDER N 256387
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              Qty 10 /Total R 100
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-list>
+  <ion-list *ngIf="dueTab">
+    <div>
+      <div style="display: flex;">
+        <div class="restaurant-tem-cls" style="display: flex;">
+          <div class="image-container">
+            <ion-avatar slot="start" class="image-avatar">
+              <img src="./../../../assets/img/event4.jpg" />
+            </ion-avatar>
+          </div>
+          <div class="restaurant-container">
+            <ion-label>
+              <p class="header-cls">
+                SukhSagar Resto
+                <ion-icon
+                  class="ion-float-right"
+                  style="margin-right: 4px;"
+                  name="arrow-up"
+                ></ion-icon>
+              </p>
+
+              <p class="text-cls">Ekbote Colony, Gorpade Peth Pune</p>
+              <div class="rater-cls">
+                <div class="call-dir-cls" slot="end">
+                  <ion-icon
+                    name="call"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                  <ion-icon
+                    name="navigate"
+                    class="ion-margin-start"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                </div>
+              </div>
+            </ion-label>
+          </div>
+        </div>
+        <div lines="none" class="restaurant-small-class">
+          <div>
+            <p class="status-class">
+              STATUS
+            </p>
+            <p style="margin-top: 0;" class="amount-class">
+              Due
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              100.00
+            </p>
+            <p style="margin-bottom: 0;" class="due-date-class">
+              DUE DATE
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              8 May, 2020
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div class="restaurant-order-cls" style="display: flex;">
+          <div style="margin-left: 5px;">
+            <p style="margin-bottom: 5px;" class="due-date-class">
+              ORDER N 256387
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              Qty 10 /Total R 100
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div class="paynow-class">
+          <div style="text-align: center;">
+            <!-- <ion-icon name="cart"></ion-icon> -->
+            <p class="paynow-p">
+              Pay Now
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-list>
+</ion-content>

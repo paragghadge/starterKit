@@ -1,166 +1,271 @@
 <ion-content class="page-bg-color">
-	<ion-card class="login-card">
-		<ion-card-header>
-			<ion-card-subtitle></ion-card-subtitle>
-			<ion-card-title class="header-cls">SIGN UP</ion-card-title>
-		</ion-card-header>
+  <ion-card class="login-card">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title class="header-cls">SIGN UP</ion-card-title>
+    </ion-card-header>
 
-		<ion-card-content>
-			<ion-grid>
-				<ion-row class="ion-align-items-center">
-					<ion-col size="6" class="ion-text-center">
-						<ion-button shape="round" class="txt-cls" [color]="userTab ? 'primary' : '#FFFFFF'"
-							(click)="onClickTabs('Customer')">
-							User</ion-button>
-					</ion-col>
-					<ion-col size="6" class="ion-text-center">
-						<ion-button shape="round" class="txt-cls" [color]="!userTab ? 'primary' : '#FFFFFF'"
-							(click)="onClickTabs('Vendor')">
-							Vendor</ion-button>
-					</ion-col>
-				</ion-row>
-			</ion-grid>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="6" class="ion-text-center">
+            <ion-button
+              shape="round"
+              class="txt-cls"
+              [color]="userTab ? 'primary' : '#FFFFFF'"
+              (click)="onClickTabs('Customer')"
+            >
+              User</ion-button
+            >
+          </ion-col>
+          <ion-col size="6" class="ion-text-center">
+            <ion-button
+              shape="round"
+              class="txt-cls"
+              [color]="!userTab ? 'primary' : '#FFFFFF'"
+              (click)="onClickTabs('Vendor')"
+            >
+              Vendor</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-			<!-- <div *ngIf="userTab"> -->
-			<form [formGroup]="userForm">
-				<ion-list>
-
-
-					<!-- <ion-label class="lbl-cls">Username <span class="star-lbl">*</span></ion-label> -->
-					<!-- <ion-item class="ion-margin-bottom">
+      <!-- <div *ngIf="userTab"> -->
+      <form [formGroup]="userForm">
+        <ion-list>
+          <!-- <ion-label class="lbl-cls">Username <span class="star-lbl">*</span></ion-label> -->
+          <!-- <ion-item class="ion-margin-bottom">
 						<ion-icon color="primary" name="person" slot="start" class="input-icon"></ion-icon>
 						<ion-input type="text" placeholder="Username" formControlName="userName"></ion-input>
 					</ion-item> -->
 
-					<ion-row class="ion-margin-bottom">
-						<ion-col>
-							<ion-item>
-								<ion-icon color="primary" name="person" slot="start" class="input-icon"></ion-icon>
-								<ion-input type="text" placeholder="First Name" formControlName="firstName"></ion-input>
-							</ion-item>
-						</ion-col>
-						<ion-col>
-							<ion-item>
-								<ion-icon color="primary" name="person" slot="start" class="input-icon"></ion-icon>
-								<ion-input type="text" placeholder="Last Name" formControlName="lastName"></ion-input>
-							</ion-item>
-						</ion-col>
-					</ion-row>
+          <ion-row class="ion-margin-bottom">
+            <ion-col>
+              <ion-item>
+                <ion-icon
+                  color="primary"
+                  name="person"
+                  slot="start"
+                  class="input-icon"
+                ></ion-icon>
+                <ion-input
+                  type="text"
+                  placeholder="First Name"
+                  formControlName="firstName"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-icon
+                  color="primary"
+                  name="person"
+                  slot="start"
+                  class="input-icon"
+                ></ion-icon>
+                <ion-input
+                  type="text"
+                  placeholder="Last Name"
+                  formControlName="lastName"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
 
-					<!-- <ion-label class="lbl-cls">Email ID <span class="star-lbl">*</span></ion-label> -->
-					<ion-item class="ion-margin-bottom">
-						<ion-icon color="primary" name="mail" slot="start" class="input-icon"></ion-icon>
-						<ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
-					</ion-item>
+          <!-- <ion-label class="lbl-cls">Email ID <span class="star-lbl">*</span></ion-label> -->
+          <ion-item class="ion-margin-bottom">
+            <ion-icon
+              color="primary"
+              name="mail"
+              slot="start"
+              class="input-icon"
+            ></ion-icon>
+            <ion-input
+              type="email"
+              placeholder="Email"
+              formControlName="email"
+            ></ion-input>
+          </ion-item>
 
-					<!-- <ion-label class="lbl-cls">Mobile Number <span class="star-lbl">*</span></ion-label> -->
-					<ion-item class="ion-margin-bottom">
-						<ion-icon color="primary" name="call" slot="start" class="input-icon"></ion-icon>
-						<ion-input type="tel" maxLength="10" minlength="10" placeholder="Mobile Number"
-							formControlName="phone">
-						</ion-input>
-					</ion-item>
+          <!-- <ion-label class="lbl-cls">Mobile Number <span class="star-lbl">*</span></ion-label> -->
+          <ion-item class="ion-margin-bottom">
+            <ion-icon
+              color="primary"
+              name="call"
+              slot="start"
+              class="input-icon"
+            ></ion-icon>
+            <ion-input
+              type="tel"
+              maxLength="10"
+              minlength="10"
+              placeholder="Mobile Number"
+              formControlName="phone"
+            >
+            </ion-input>
+          </ion-item>
 
-					<ion-item class="ion-margin-bottom">
-						<ion-icon color="primary" name="chatbox-ellipses-outline" slot="start" class="input-icon">
-						</ion-icon>
-						<ion-input type="tel" maxLength="4" placeholder="OTP" formControlName="otp">
-						</ion-input>
-						<ion-button (click)="onClickResendOTP()" [disabled]="isDisabled">{{otpLabel}}</ion-button>
-					</ion-item>
+          <ion-item class="ion-margin-bottom">
+            <ion-icon
+              color="primary"
+              name="chatbox-ellipses-outline"
+              slot="start"
+              class="input-icon"
+            >
+            </ion-icon>
+            <ion-input
+              type="tel"
+              maxLength="4"
+              placeholder="OTP"
+              formControlName="otp"
+            >
+            </ion-input>
+            <ion-button (click)="onClickResendOTP()" [disabled]="isDisabled"
+              >{{otpLabel}}</ion-button
+            >
+          </ion-item>
 
-					<!-- <ion-label class="lbl-cls">Password <span class="star-lbl">*</span></ion-label> -->
-					<ion-item class="ion-margin-bottom">
-						<ion-icon color="primary" name="lock-open" slot="start" class="input-icon"></ion-icon>
-						<ion-input type="text" [type]="passwordType" formControlName="password" placeholder="Password">
-						</ion-input>
-						<ion-icon color="primary" class="eye-icon" slot="end"
-							[name]="passwordType === 'password'? 'eye' : 'eye-off'" (click)="showPassword()">
-						</ion-icon>
-					</ion-item>
+          <!-- <ion-label class="lbl-cls">Password <span class="star-lbl">*</span></ion-label> -->
+          <ion-item class="ion-margin-bottom">
+            <ion-icon
+              color="primary"
+              name="lock-open"
+              slot="start"
+              class="input-icon"
+            ></ion-icon>
+            <ion-input
+              type="text"
+              [type]="passwordType"
+              formControlName="password"
+              placeholder="Password"
+            >
+            </ion-input>
+            <ion-icon
+              color="primary"
+              class="eye-icon"
+              slot="end"
+              [name]="passwordType === 'password'? 'eye' : 'eye-off'"
+              (click)="showPassword()"
+            >
+            </ion-icon>
+          </ion-item>
 
-					<!-- <ion-label class="lbl-cls">Confirm Password <span class="star-lbl">*</span></ion-label> -->
-					<ion-item class="ion-margin-bottom">
-						<ion-icon color="primary" name="lock-open" slot="start" class="input-icon"></ion-icon>
-						<ion-input type="text" [type]="confirmPasswordType" formControlName="confirmPassword"
-							placeholder="Confirm Password">
-						</ion-input>
-						<ion-icon color="primary" class="eye-icon" slot="end"
-							[name]="confirmPasswordType === 'password'? 'eye' : 'eye-off'"
-							(click)="showConfirmPassword()">
-						</ion-icon>
-					</ion-item>
+          <!-- <ion-label class="lbl-cls">Confirm Password <span class="star-lbl">*</span></ion-label> -->
+          <ion-item class="ion-margin-bottom">
+            <ion-icon
+              color="primary"
+              name="lock-open"
+              slot="start"
+              class="input-icon"
+            ></ion-icon>
+            <ion-input
+              type="text"
+              [type]="confirmPasswordType"
+              formControlName="confirmPassword"
+              placeholder="Confirm Password"
+            >
+            </ion-input>
+            <ion-icon
+              color="primary"
+              class="eye-icon"
+              slot="end"
+              [name]="confirmPasswordType === 'password'? 'eye' : 'eye-off'"
+              (click)="showConfirmPassword()"
+            >
+            </ion-icon>
+          </ion-item>
 
-					<ion-grid class="ion-margin-bottom" *ngIf="!userTab">
-						<ion-row class="ion-align-items-center">
-							<ion-radio-group formControlName="codeType" value="1">
-								<ion-col class="ion-margin-end">
-									<ion-radio value="Associate Code"></ion-radio>
-									<ion-label class="agree-lbl">Associate Code</ion-label>
-								</ion-col>
-								<ion-col>
-									<ion-radio value="Referral Code"></ion-radio>
-									<ion-label class="agree-lbl">Referral Code</ion-label>
-								</ion-col>
-							</ion-radio-group>
-						</ion-row>
-					</ion-grid>
+          <ion-grid class="ion-margin-bottom" *ngIf="!userTab">
+            <ion-row class="ion-align-items-center">
+              <ion-radio-group formControlName="codeType" value="1">
+                <ion-col class="ion-margin-end">
+                  <ion-radio value="Associate Code"></ion-radio>
+                  <ion-label class="agree-lbl">Associate Code</ion-label>
+                </ion-col>
+                <ion-col>
+                  <ion-radio value="Referral Code"></ion-radio>
+                  <ion-label class="agree-lbl">Referral Code</ion-label>
+                </ion-col>
+              </ion-radio-group>
+            </ion-row>
+          </ion-grid>
 
-					<ion-item class="ion-margin-bottom">
-						<ion-icon color="primary" name="people" slot="start" class="input-icon"></ion-icon>
-						<ion-input type="text" formControlName="codeValue" placeholder="Referral Code (Optional)">
-						</ion-input>
-					</ion-item>
-				</ion-list>
+          <ion-item class="ion-margin-bottom">
+            <ion-icon
+              color="primary"
+              name="people"
+              slot="start"
+              class="input-icon"
+            ></ion-icon>
+            <ion-input
+              type="text"
+              formControlName="codeValue"
+              placeholder="Referral Code (Optional)"
+            >
+            </ion-input>
+          </ion-item>
+        </ion-list>
 
-				<ion-grid class="">
-					<ion-row>
-						<ion-col>
-							<ion-checkbox class="agree-chkbx" formControlName="agreement"></ion-checkbox>
-							<ion-label class="agree-lbl">I agree with Terms of Service, Terms of Payments and
-								Privacy
-								Policy
-							</ion-label>
-						</ion-col>
-					</ion-row>
-				</ion-grid>
+        <ion-grid class="">
+          <ion-row>
+            <ion-col>
+              <ion-checkbox
+                class="agree-chkbx"
+                formControlName="agreement"
+              ></ion-checkbox>
+              <ion-label class="agree-lbl"
+                >I agree with Terms of Service, Terms of Payments and Privacy
+                Policy
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
-				<ion-button expand="full" class="login-btn" [disabled]="userForm.invalid" (click)="submitSignUpForm()"
-					shape="round">
-					Signup</ion-button>
-				<ion-row class="ion-margin-top">
-					<ion-col class="ion-text-center">
-						Already have account? <a class="lbl" (click)="gotoLogin()"> Login</a>
-					</ion-col>
-				</ion-row>
+        <ion-button
+          expand="full"
+          class="login-btn"
+          [disabled]="userForm.invalid"
+          (click)="submitSignUpForm()"
+          shape="round"
+        >
+          Signup</ion-button
+        >
+        <ion-row class="ion-margin-top">
+          <ion-col class="ion-text-center">
+            Already have account?
+            <a class="lbl" (click)="gotoLogin()"> Login</a>
+          </ion-col>
+        </ion-row>
 
-				<ion-grid class="other-login">
-					<ion-row>
-						<ion-col>
-							<div class="or">
-								<ion-label class="or-lbl">OR</ion-label>
-							</div>
-						</ion-col>
-					</ion-row>
-					<ion-row>
-						<ion-col>
-							<ion-label class="login-item-margin login-with-cls">login with</ion-label>
-						</ion-col>
-					</ion-row>
-					<ion-row>
-						<ion-col class="mail-fb login-item-margin">
-							<ion-icon name="logo-google"></ion-icon>
-							<ion-icon name="logo-facebook" class="fb-cls"></ion-icon>
-						</ion-col>
-					</ion-row>
-				</ion-grid>
-			</form>
-			<!-- </div> -->
+        <ion-grid class="other-login">
+          <ion-row>
+            <ion-col>
+              <div class="or">
+                <ion-label class="or-lbl">OR</ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-label class="login-item-margin login-with-cls"
+                >login with</ion-label
+              >
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="mail-fb login-item-margin">
+              <ion-icon name="logo-google"></ion-icon>
+              <ion-icon name="logo-facebook" class="fb-cls"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+      <!-- </div> -->
 
-			<!-- <div *ngIf="!userTab">
+      <!-- <div *ngIf="!userTab">
 				Vendor Data...!
 			</div> -->
-		</ion-card-content>
-	</ion-card>
-
+    </ion-card-content>
+  </ion-card>
 </ion-content>

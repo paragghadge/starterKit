@@ -23,6 +23,13 @@ const routes: Routes = [
 				// }],
 			},
 			{
+				path: 'paymenthistory',
+				// children: [{
+				// 	path: '',
+				loadChildren: () => import('../payment-history/payment-history.module').then(m => m.PaymentHistoryPageModule)
+				// }],
+			},
+			{
 				path: 'profile',
 				// children: [{
 				// 	path: '',
