@@ -1,10 +1,8 @@
 <ion-header class="ion-margin-bottom">
   <ion-toolbar>
-    <ion-toolbar>
-      <ion-title><p align="center">Payment History</p></ion-title>
-    </ion-toolbar>
+    <ion-title>Payment History</ion-title>
     <ion-buttons slot="primary">
-      <ion-button (click)="onClickNotification()">
+      <ion-button>
         <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -98,13 +96,13 @@
           </div>
         </div>
       </div>
-      <div style="display: flex;">
-        <div class="restaurant-order-cls" style="display: flex;">
+      <div class="disp-flex">
+        <div class="restaurant-order-cls" *ngFor="let num of [1]">
           <div style="margin-left: 5px;">
-            <p style="margin-bottom: 5px;" class="due-date-class">
+            <p style="margin-bottom: 5px;" class="order-sub-cls">
               ORDER N 256387
             </p>
-            <p style="margin-top: 0;" class="due-date-class">
+            <p class="order-sub-cls margin-top0">
               Qty 10 /Total R 100
             </p>
           </div>
@@ -168,26 +166,22 @@
           </div>
         </div>
       </div>
-      <div style="display: flex;">
-        <div class="restaurant-order-cls" style="display: flex;">
+      <div class="disp-flex">
+        <div class="restaurant-order-cls" *ngFor="let num of [1]">
           <div style="margin-left: 5px;">
-            <p style="margin-bottom: 5px;" class="due-date-class">
+            <p style="margin-bottom: 5px;" class="order-sub-cls">
               ORDER N 256387
             </p>
-            <p style="margin-top: 0;" class="due-date-class">
+            <p class="order-sub-cls margin-top0">
               Qty 10 /Total R 100
             </p>
           </div>
         </div>
       </div>
-      <div style="display: flex;">
-        <div class="paynow-class">
-          <div style="text-align: center;">
-            <!-- <ion-icon name="cart"></ion-icon> -->
-            <p class="paynow-p">
-              Pay Now
-            </p>
-          </div>
+      <div style="display: flex;" style="width: 94%; margin: 0 auto;">
+        <div class="paynow-class" *ngFor="let num of [1]">
+          <ion-icon class="icon ion-ios-clock-outline" name="cart"></ion-icon>
+          <span class="text">Pay Now</span>
         </div>
       </div>
     </div>
@@ -246,13 +240,13 @@
           </div>
         </div>
       </div>
-      <div style="display: flex;">
-        <div class="restaurant-order-cls" style="display: flex;">
+      <div class="disp-flex">
+        <div class="restaurant-order-cls" *ngFor="let num of [1]">
           <div style="margin-left: 5px;">
-            <p style="margin-bottom: 5px;" class="due-date-class">
+            <p style="margin-bottom: 5px;" class="order-sub-cls">
               ORDER N 256387
             </p>
-            <p style="margin-top: 0;" class="due-date-class">
+            <p class="order-sub-cls margin-top0">
               Qty 10 /Total R 100
             </p>
           </div>
@@ -317,26 +311,22 @@
           </div>
         </div>
       </div>
-      <div style="display: flex;">
-        <div class="restaurant-order-cls" style="display: flex;">
+      <div class="disp-flex">
+        <div class="restaurant-order-cls" *ngFor="let num of [1]">
           <div style="margin-left: 5px;">
-            <p style="margin-bottom: 5px;" class="due-date-class">
+            <p style="margin-bottom: 5px;" class="order-sub-cls">
               ORDER N 256387
             </p>
-            <p style="margin-top: 0;" class="due-date-class">
+            <p class="order-sub-cls margin-top0">
               Qty 10 /Total R 100
             </p>
           </div>
         </div>
       </div>
-      <div style="display: flex;">
-        <div class="paynow-class">
-          <div style="text-align: center;">
-            <!-- <ion-icon name="cart"></ion-icon> -->
-            <p class="paynow-p">
-              Pay Now
-            </p>
-          </div>
+      <div style="display: flex;" style="width: 94%; margin: 0 auto;">
+        <div class="paynow-class" *ngFor="let num of [1]">
+          <ion-icon class="icon ion-ios-clock-outline" name="cart"></ion-icon>
+          <span class="text">Pay Now</span>
         </div>
       </div>
     </div>

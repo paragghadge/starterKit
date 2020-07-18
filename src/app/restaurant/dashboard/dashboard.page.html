@@ -1,10 +1,8 @@
 <ion-header class="ion-margin-bottom">
   <ion-toolbar>
-    <ion-toolbar>
-      <ion-title><p align="center">Dashboard</p></ion-title>
-    </ion-toolbar>
+    <ion-title>Dashboard</ion-title>
     <ion-buttons slot="primary">
-      <ion-button (click)="onClickNotification()">
+      <ion-button>
         <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -12,49 +10,42 @@
 </ion-header>
 
 <ion-content class="ion-padding-horizontal">
-  <IonItemDivider>
-    <ion-label
-      ><p class="header-cls" style="font-size: 12px;">ORDER STATUS</p>
-      <p class="text-cls" style="font-size: 10px;">ORDER N 12345</p>
-    </ion-label>
-    <div class="stepper-class">
-      <!-- Step Progress Bar -->
-      <ion-row
-        class="progress-controller ion-padding"
-        style="margin-left: 16px; padding-bottom: 0px;"
-      >
-        <div #step1 class="steps steps1">1</div>
-        <div #sc1 class="step-connector step-connector1"></div>
+  <ion-label
+    ><p class="lbl-order-header">ORDER STATUS</p>
+    <p class="lbl-order-sub">ORDER N 12345</p>
+  </ion-label>
+  <div class="stepper-class">
+    <ion-row
+      class="progress-controller ion-padding"
+      style="margin-left: 16px; padding-bottom: 0px;"
+    >
+      <div #step1 class="steps steps1">1</div>
+      <div #sc1 class="step-connector step-connector1"></div>
 
-        <div #step2 class="steps steps2">2</div>
-        <div #sc2 class="step-connector step-connector2"></div>
-        <div #step3 class="steps steps3">3</div>
-        <div #sc2 class="step-connector step-connector3"></div>
-        <div #step3 class="steps steps4">4</div>
-      </ion-row>
-      <div style="margin-left: 16px; margin-top: -4px;">
-        <small class="step1-text">Confirming</small>
-        <small class="step2-text">Confirmed</small>
-        <small class="step3-text">Dispatch</small>
-        <small class="step4-text">Delivered</small>
-      </div>
-      <div style="margin-left: 16px; margin-top: -4px;">
-        <small class="step1-text">4 May,2020</small>
-        <small class="step2-text">4 May 2020</small>
-        <small class="step3-text" style="margin-left: 8%;">4 May 2020</small>
-        <small class="step4-text" style="margin-left: 8%;">4 May 2020</small>
-      </div>
+      <div #step2 class="steps steps2">2</div>
+      <div #sc2 class="step-connector step-connector2"></div>
+      <div #step3 class="steps steps3">3</div>
+      <div #sc2 class="step-connector step-connector3"></div>
+      <div #step3 class="steps steps4">4</div>
+    </ion-row>
+    <div style="margin-left: 16px; margin-top: -4px;">
+      <small class="step1-text">Confirming</small>
+      <small class="step2-text">Confirmed</small>
+      <small class="step3-text">Dispatch</small>
+      <small class="step4-text">Delivered</small>
     </div>
-  </IonItemDivider>
+    <div style="margin-left: 16px; margin-top: -4px;">
+      <small class="step1-text">4 May,2020</small>
+      <small class="step2-text">4 May 2020</small>
+      <small class="step3-text" style="margin-left: 8%;">4 May 2020</small>
+      <small class="step4-text" style="margin-left: 8%;">4 May 2020</small>
+    </div>
+  </div>
 
   <ion-list>
     <div>
-      <div style="display: flex;">
-        <div
-          class="restaurant-tem-cls"
-          *ngFor="let num of [1]"
-          style="display: flex;"
-        >
+      <div class="disp-flex">
+        <div class="restaurant-tem-cls" *ngFor="let num of [1]">
           <div class="image-container">
             <ion-avatar slot="start" class="image-avatar">
               <img src="./../../../assets/img/event4.jpg" />
@@ -64,11 +55,7 @@
             <ion-label>
               <p class="header-cls">
                 Vaishali Restaurant
-                <ion-icon
-                  class="ion-float-right"
-                  style="margin-right: 4px;"
-                  name="arrow-up"
-                ></ion-icon>
+                <ion-icon class="arrow-up-css" name="arrow-up"></ion-icon>
               </p>
 
               <p class="text-cls">Ekbote Colony, Gorpade Peth Pune</p>
@@ -96,32 +83,28 @@
             <p class="confirm-class">
               Confirming
             </p>
-            <p style="margin-bottom: 0;" class="due-date-class">
+            <p class="due-date-class margin-bottom0">
               DUE DATE
             </p>
-            <p style="margin-top: 0;" class="due-date-class">
+            <p class="due-date-class margin-top0">
               8 May, 2020
             </p>
-            <p style="margin-bottom: 0;" class="amount-class">
+            <p class="amount-class margin-bottom0">
               DUE AMOUNT
             </p>
-            <p style="margin-top: 0;" class="amount-class">
+            <p class="amount-class margin-top0">
               100.00
             </p>
           </div>
         </div>
       </div>
-      <div style="display: flex;">
-        <div
-          class="restaurant-order-cls"
-          *ngFor="let num of [1]"
-          style="display: flex;"
-        >
+      <div class="disp-flex">
+        <div class="restaurant-order-cls" *ngFor="let num of [1]">
           <div style="margin-left: 5px;">
-            <p style="margin-bottom: 5px;" class="due-date-class">
+            <p style="margin-bottom: 5px;" class="order-sub-cls">
               ORDER N 256387
             </p>
-            <p style="margin-top: 0;" class="due-date-class">
+            <p class="order-sub-cls margin-top0">
               Qty 10 /Total R 100
             </p>
           </div>
@@ -129,25 +112,12 @@
       </div>
       <div style="display: flex;" style="width: 94%; margin: 0 auto;">
         <div class="paynow-class" *ngFor="let num of [1]">
-          <div style="text-align: center;">
-            <!-- <ion-icon name="cart"></ion-icon> -->
-            <p
-              style="
-                font-weight: 700;
-                color: #929cff;
-                font-size: 12px;
-                padding: 8px;
-                margin: 0;
-              "
-            >
-              <ion-icon name="cart"></ion-icon> Pay Now
-            </p>
-          </div>
+          <ion-icon class="icon ion-ios-clock-outline" name="cart"></ion-icon>
+          <span class="text">Pay Now</span>
         </div>
       </div>
     </div>
     <div class="stepper-class">
-      <!-- Step Progress Bar -->
       <ion-row
         class="progress-controller ion-padding"
         style="margin-left: 16px; padding-bottom: 0px;"
@@ -176,11 +146,7 @@
     </div>
     <div>
       <div style="display: flex;">
-        <div
-          class="restaurant-tem-cls"
-          *ngFor="let num of [1]"
-          style="display: flex;"
-        >
+        <div class="restaurant-tem-cls" *ngFor="let num of [1]">
           <div class="image-container">
             <ion-avatar slot="start" class="image-avatar">
               <img src="./../../../assets/img/event4.jpg" />
@@ -190,11 +156,7 @@
             <ion-label>
               <p class="header-cls">
                 SukhSagar Resto
-                <ion-icon
-                  class="ion-float-right"
-                  style="margin-right: 4px;"
-                  name="arrow-up"
-                ></ion-icon>
+                <ion-icon class="arrow-up-css" name="arrow-up"></ion-icon>
               </p>
 
               <p class="text-cls">Ekbote Colony, Gorpade Peth Pune</p>
@@ -222,32 +184,28 @@
             <p class="dispatch-class">
               Dispatch
             </p>
-            <p style="margin-bottom: 0;" class="due-date-class">
+            <p class="due-date-class margin-bottom0">
               DUE DATE
             </p>
-            <p style="margin-top: 0;" class="due-date-class">
+            <p class="due-date-class margin-top0">
               8 May, 2020
             </p>
-            <p style="margin-bottom: 0;" class="paid-class">
+            <p class="paid-class margin-bottom0">
               Paid Amount
             </p>
-            <p style="margin-top: 0;" class="amount-class">
+            <p class="amount-class margin-top0">
               100.00
             </p>
           </div>
         </div>
       </div>
-      <div style="display: flex;">
-        <div
-          class="restaurant-order-cls"
-          *ngFor="let num of [1]"
-          style="display: flex;"
-        >
+      <div class="disp-flex">
+        <div class="restaurant-order-cls" *ngFor="let num of [1]">
           <div style="margin-left: 5px;">
-            <p style="margin-bottom: 5px;" class="due-date-class">
+            <p style="margin-bottom: 5px;" class="order-sub-cls">
               ORDER N 256387
             </p>
-            <p style="margin-top: 0;" class="due-date-class">
+            <p class="order-sub-cls margin-top0">
               Qty 10 /Total R 100
             </p>
           </div>
@@ -255,20 +213,8 @@
       </div>
       <div style="display: flex;" style="width: 94%; margin: 0 auto;">
         <div class="paynow-class" *ngFor="let num of [1]">
-          <div style="text-align: center;">
-            <!-- <ion-icon name="cart"></ion-icon> -->
-            <p
-              style="
-                font-weight: 700;
-                color: #929cff;
-                font-size: 12px;
-                padding: 8px;
-                margin: 0;
-              "
-            >
-              Pay Now
-            </p>
-          </div>
+          <ion-icon class="icon ion-ios-clock-outline" name="cart"></ion-icon>
+          <span class="text">Pay Now</span>
         </div>
       </div>
     </div>

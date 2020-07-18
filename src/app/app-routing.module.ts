@@ -54,10 +54,6 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./restaurant/home/home.module').then( m => m.HomePageModule)
   },
-  {
-    path: 'payment-history',
-    loadChildren: () => import('./restaurant/payment-history/payment-history.module').then( m => m.PaymentHistoryPageModule)
-  },
 
 
 ];

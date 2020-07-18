@@ -23,13 +23,6 @@ const routes: Routes = [
 				// }],
 			},
 			{
-				path: 'paymenthistory',
-				// children: [{
-				// 	path: '',
-				loadChildren: () => import('../payment-history/payment-history.module').then(m => m.PaymentHistoryPageModule)
-				// }],
-			},
-			{
 				path: 'profile',
 				// children: [{
 				// 	path: '',
@@ -38,18 +31,22 @@ const routes: Routes = [
 				// }],
 			},
 			{
+				path: 'paymenthistory',
+				loadChildren: () => import('../payment-history/payment-history.module').then(m => m.PaymentHistoryPageModule)
+			},
+			{
 				path: 'home/restaurant-details',
 				loadChildren: () => import('../restaurant-details/restaurant-details.module').then(m => m.RestaurantDetailsPageModule)
 			},
 			{
 				path: '',
-				redirectTo: '/tabnav/dashboard',
+				redirectTo: '/tabnav/home',
 				pathMatch: 'full'
 			}
 		]
 	}, {
 		path: '',
-		redirectTo: '/tabnav/tabnav/dashboard',
+		redirectTo: '/tabnav/tabnav/home',
 		pathMatch: 'full'
 	}
 ];
