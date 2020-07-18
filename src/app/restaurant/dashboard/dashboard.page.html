@@ -1,74 +1,276 @@
-<ion-header>
-	<!-- <ion-toolbar>
-		<ion-title>dashboard</ion-title>
-	</ion-toolbar> -->
-	<ion-toolbar>
-		<ion-searchbar showCancelButton="focus" placeholder="Search Location" class="search-bar-cls location-search">
-		</ion-searchbar>
-		<ion-buttons slot="primary">
-			<ion-button (click)="onClickNotification()">
-				<ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
-			</ion-button>
-		</ion-buttons>
-	</ion-toolbar>
+<ion-header class="ion-margin-bottom">
+  <ion-toolbar>
+    <ion-toolbar>
+      <ion-title><p align="center">Dashboard</p></ion-title>
+    </ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onClickNotification()">
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding-horizontal">
+  <IonItemDivider>
+    <ion-label
+      ><p class="header-cls" style="font-size: 12px;">ORDER STATUS</p>
+      <p class="text-cls" style="font-size: 10px;">ORDER N 12345</p>
+    </ion-label>
+    <div class="stepper-class">
+      <!-- Step Progress Bar -->
+      <ion-row
+        class="progress-controller ion-padding"
+        style="margin-left: 16px; padding-bottom: 0px;"
+      >
+        <div #step1 class="steps steps1">1</div>
+        <div #sc1 class="step-connector step-connector1"></div>
 
-	<ion-searchbar showCancelButton="focus" placeholder="Search Restaurant" class="search-bar-cls"></ion-searchbar>
+        <div #step2 class="steps steps2">2</div>
+        <div #sc2 class="step-connector step-connector2"></div>
+        <div #step3 class="steps steps3">3</div>
+        <div #sc2 class="step-connector step-connector3"></div>
+        <div #step3 class="steps steps4">4</div>
+      </ion-row>
+      <div style="margin-left: 16px; margin-top: -4px;">
+        <small class="step1-text">Confirming</small>
+        <small class="step2-text">Confirmed</small>
+        <small class="step3-text">Dispatch</small>
+        <small class="step4-text">Delivered</small>
+      </div>
+      <div style="margin-left: 16px; margin-top: -4px;">
+        <small class="step1-text">4 May,2020</small>
+        <small class="step2-text">4 May 2020</small>
+        <small class="step3-text" style="margin-left: 8%;">4 May 2020</small>
+        <small class="step4-text" style="margin-left: 8%;">4 May 2020</small>
+      </div>
+    </div>
+  </IonItemDivider>
 
-	<ion-grid>
-		<ion-row class="ion-align-items-center">
-			<ion-col size="4">
-				<ion-button shape="round" [ngClass]="filterTab === 'open' ? 'active' : 'txt-cls'"
-					(click)="onClickTabs('open')">
-					<ion-icon slot="start" name="time-outline"></ion-icon>
-					Open
-				</ion-button>
-			</ion-col>
-			<ion-col size="4">
-				<ion-button shape="round" [ngClass]="filterTab === 'near' ? 'active' : 'txt-cls'"
-					(click)="onClickTabs('near')">
-					<ion-icon slot="start" name="navigate"></ion-icon>
-					Near
-				</ion-button>
-			</ion-col>
-			<ion-col size="4">
-				<ion-button shape="round" [ngClass]="filterTab === 'rating' ? 'active' : 'txt-cls'"
-					(click)="onClickTabs('rating')">
-					<ion-icon slot="start" name="star"></ion-icon>
-					Rating
-				</ion-button>
-			</ion-col>
-		</ion-row>
-	</ion-grid>
+  <ion-list>
+    <div>
+      <div style="display: flex;">
+        <div
+          class="restaurant-tem-cls"
+          *ngFor="let num of [1]"
+          style="display: flex;"
+        >
+          <div class="image-container">
+            <ion-avatar slot="start" class="image-avatar">
+              <img src="./../../../assets/img/event4.jpg" />
+            </ion-avatar>
+          </div>
+          <div class="restaurant-container">
+            <ion-label>
+              <p class="header-cls">
+                Vaishali Restaurant
+                <ion-icon
+                  class="ion-float-right"
+                  style="margin-right: 4px;"
+                  name="arrow-up"
+                ></ion-icon>
+              </p>
 
-	<ion-list>
+              <p class="text-cls">Ekbote Colony, Gorpade Peth Pune</p>
+              <div class="rater-cls">
+                <div class="call-dir-cls" slot="end">
+                  <ion-icon
+                    name="call"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                  <ion-icon
+                    name="navigate"
+                    class="ion-margin-start"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                </div>
+              </div>
+            </ion-label>
+          </div>
+        </div>
+        <div lines="none" class="restaurant-small-class">
+          <div>
+            <p class="status-class">
+              STATUS
+            </p>
+            <p class="confirm-class">
+              Confirming
+            </p>
+            <p style="margin-bottom: 0;" class="due-date-class">
+              DUE DATE
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              8 May, 2020
+            </p>
+            <p style="margin-bottom: 0;" class="amount-class">
+              DUE AMOUNT
+            </p>
+            <p style="margin-top: 0;" class="amount-class">
+              100.00
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div
+          class="restaurant-order-cls"
+          *ngFor="let num of [1]"
+          style="display: flex;"
+        >
+          <div style="margin-left: 5px;">
+            <p style="margin-bottom: 5px;" class="due-date-class">
+              ORDER N 256387
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              Qty 10 /Total R 100
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;" style="width: 94%; margin: 0 auto;">
+        <div class="paynow-class" *ngFor="let num of [1]">
+          <div style="text-align: center;">
+            <!-- <ion-icon name="cart"></ion-icon> -->
+            <p
+              style="
+                font-weight: 700;
+                color: #929cff;
+                font-size: 12px;
+                padding: 8px;
+                margin: 0;
+              "
+            >
+              <ion-icon name="cart"></ion-icon> Pay Now
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stepper-class">
+      <!-- Step Progress Bar -->
+      <ion-row
+        class="progress-controller ion-padding"
+        style="margin-left: 16px; padding-bottom: 0px;"
+      >
+        <div #step1 class="steps steps1">1</div>
+        <div #sc1 class="step-connector step-connector1"></div>
 
-		<ion-item lines="none" class="restaurant-tem-cls ion-margin-bottom" *ngFor="let num of [1,2,3,4,5]"
-			(click)="onCLickItem()">
-			<ion-avatar slot="start" class="image-container">
-				<img src="../../../assets/service-items/Grocery.png">
-				<app-rating class="rating-container" [rating]="rating" [isDisabled]="false"
-					(ratingChange)="ratingChange($event)">
-				</app-rating>
-			</ion-avatar>
-			<ion-label>
-				<p class="header-cls">Vaishali Restaurant</p>
-				<p class="text-cls">Famous FOr South Indian Food</p>
-				<p class="text-cls">Ekbote Colony, Gorpade Peth Pune</p>
-				<p class="text-cls">10KM away</p>
-				<div class="rater-cls">
-					<span *ngIf="isOpen" class="open">Open</span>
-					<span *ngIf="!isOpen" class="open">Close</span>
-					<span class="close-time-cls ion-margin-start text-cls">Closes 10PM</span>
-					<div class="call-dir-cls" slot="end">
-						<ion-icon name="call" (click)="onClickCall($event)"></ion-icon>
-						<ion-icon name="navigate" class="ion-margin-start" (click)="onClickCall($event)"></ion-icon>
-					</div>
-				</div>
-			</ion-label>
-		</ion-item>
-	</ion-list>
+        <div #step2 class="steps steps2">2</div>
+        <div #sc2 class="step-connector step-connector2"></div>
+        <div #step3 class="steps steps3">3</div>
+        <div #sc2 class="step-connector step-connector3"></div>
+        <div #step3 class="steps steps4">4</div>
+      </ion-row>
+      <div style="margin-left: 16px; margin-top: -4px;">
+        <small class="step1-text">Confirming</small>
+        <small class="step2-text">Confirmed</small>
+        <small class="step3-text">Dispatch</small>
+        <small class="step4-text">Delivered</small>
+      </div>
+      <div style="margin-left: 16px; margin-top: -4px;">
+        <small class="step1-text">4 May,2020</small>
+        <small class="step2-text">4 May 2020</small>
+        <small class="step3-text" style="margin-left: 8%;">4 May 2020</small>
+        <small class="step4-text" style="margin-left: 8%;">4 May 2020</small>
+      </div>
+    </div>
+    <div>
+      <div style="display: flex;">
+        <div
+          class="restaurant-tem-cls"
+          *ngFor="let num of [1]"
+          style="display: flex;"
+        >
+          <div class="image-container">
+            <ion-avatar slot="start" class="image-avatar">
+              <img src="./../../../assets/img/event4.jpg" />
+            </ion-avatar>
+          </div>
+          <div class="restaurant-container">
+            <ion-label>
+              <p class="header-cls">
+                SukhSagar Resto
+                <ion-icon
+                  class="ion-float-right"
+                  style="margin-right: 4px;"
+                  name="arrow-up"
+                ></ion-icon>
+              </p>
 
+              <p class="text-cls">Ekbote Colony, Gorpade Peth Pune</p>
+              <div class="rater-cls">
+                <div class="call-dir-cls" slot="end">
+                  <ion-icon
+                    name="call"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                  <ion-icon
+                    name="navigate"
+                    class="ion-margin-start"
+                    (click)="onClickCall($event)"
+                  ></ion-icon>
+                </div>
+              </div>
+            </ion-label>
+          </div>
+        </div>
+        <div lines="none" class="restaurant-small-class">
+          <div>
+            <p class="status-class">
+              STATUS
+            </p>
+            <p class="dispatch-class">
+              Dispatch
+            </p>
+            <p style="margin-bottom: 0;" class="due-date-class">
+              DUE DATE
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              8 May, 2020
+            </p>
+            <p style="margin-bottom: 0;" class="paid-class">
+              Paid Amount
+            </p>
+            <p style="margin-top: 0;" class="amount-class">
+              100.00
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div
+          class="restaurant-order-cls"
+          *ngFor="let num of [1]"
+          style="display: flex;"
+        >
+          <div style="margin-left: 5px;">
+            <p style="margin-bottom: 5px;" class="due-date-class">
+              ORDER N 256387
+            </p>
+            <p style="margin-top: 0;" class="due-date-class">
+              Qty 10 /Total R 100
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;" style="width: 94%; margin: 0 auto;">
+        <div class="paynow-class" *ngFor="let num of [1]">
+          <div style="text-align: center;">
+            <!-- <ion-icon name="cart"></ion-icon> -->
+            <p
+              style="
+                font-weight: 700;
+                color: #929cff;
+                font-size: 12px;
+                padding: 8px;
+                margin: 0;
+              "
+            >
+              Pay Now
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-list>
 </ion-content>

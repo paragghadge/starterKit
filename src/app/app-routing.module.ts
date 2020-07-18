@@ -50,7 +50,11 @@ const routes: Routes = [
 	{
 		path: 'items-modal',
 		loadChildren: () => import('./restaurant/modals/items-modal/items-modal.module').then(m => m.ItemsModalPageModule)
-	},
+	},  {
+    path: 'home',
+    loadChildren: () => import('./restaurant/home/home.module').then( m => m.HomePageModule)
+  },
+
 
 ];
 

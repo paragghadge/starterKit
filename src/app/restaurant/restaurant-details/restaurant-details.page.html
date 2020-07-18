@@ -1,99 +1,116 @@
 <ion-header>
-	<ion-toolbar>
-		<ion-title>Restaurant</ion-title>
-		<ion-buttons slot="start">
-			<ion-back-button class="button-clear"></ion-back-button>
-		</ion-buttons>
-	</ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Restaurant</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="button-clear"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="restaurant-page">
-	<ion-row class="">
-		<img class="productImage" src="./../../../assets/img/event4.jpg">
-	</ion-row>
-	<div class="details-container">
-		<ion-item lines="full" class="restaurant-item">
-			<ion-col size="9">
-				<p class="header-cls">Vaishali Restaurant</p>
-				<p class="text-cls">South Indian Food</p>
-				<p class="text-timing-cls">Closes in 45 mins</p>
-			</ion-col>
-			<ion-col size="3">
-				<div class="rating-top-cls ion-float-right">
-					<p class="rating-lbl">4.5</p>
-				</div>
-				<div class="rating-bottom-cls ion-float-right">
-					<p class="review">44</p>
-					<p class="review-lbl">Review</p>
-				</div>
-			</ion-col>
-		</ion-item>
-		<ion-item lines="full" class="restaurant-item">
-			<ion-col size="9">
-				<p class="text-cls">Delivering to Viman nagar, Gorpade Peth, Pune</p>
-				<p class="text-cls">10KM Away</p>
-				<p class="text-timing-cls">Delivery in 45 mins</p>
-			</ion-col>
-			<ion-col size="3">
-				<p class="danger-lbl ion-float-right">Change</p>
-			</ion-col>
-		</ion-item>
-		<ion-row class="coupon-cls">
-			<ion-col size="3" class="ion-float-left danger-lbl coupon-lbl code">
-				10% OFF
-			</ion-col>
-			<ion-col size="9" class="ion-float-left coupon-lbl">
-				Use code <b>DAILY AID</b> to avail the offer.
-			</ion-col>
-		</ion-row>
+  <ion-row class="">
+    <img class="productImage" src="./../../../assets/img/event4.jpg" />
+  </ion-row>
+  <div class="details-container">
+    <ion-item lines="full" class="restaurant-item">
+      <ion-col size="9">
+        <p class="header-cls">Vaishali Restaurant</p>
+        <p class="text-cls">South Indian Food</p>
+        <p class="text-timing-cls">Closes in 45 mins</p>
+      </ion-col>
+      <ion-col size="3">
+        <div class="rating-top-cls ion-float-right">
+          <p class="rating-lbl">4.5</p>
+        </div>
+        <div class="rating-bottom-cls ion-float-right">
+          <p class="review">44</p>
+          <p class="review-lbl">Review</p>
+        </div>
+      </ion-col>
+    </ion-item>
+    <ion-item lines="full" class="restaurant-item">
+      <ion-col size="9">
+        <p class="text-cls">Delivering to Viman nagar, Gorpade Peth, Pune</p>
+        <p class="text-cls">10KM Away</p>
+        <p class="text-timing-cls">Delivery in 45 mins</p>
+      </ion-col>
+      <ion-col size="3">
+        <p class="danger-lbl ion-float-right">Change</p>
+      </ion-col>
+    </ion-item>
+    <ion-row class="coupon-cls">
+      <ion-col size="3" class="ion-float-left danger-lbl coupon-lbl code">
+        10% OFF
+      </ion-col>
+      <ion-col size="9" class="ion-float-left coupon-lbl">
+        Use code <b>DAILY AID</b> to avail the offer.
+      </ion-col>
+    </ion-row>
 
-		<ion-row class="coupon-lbl">
-			<ion-col size="6">
-				<ion-label class="toggle-lbl">Veg Only</ion-label>
-				<ion-toggle color="success" checked #veg></ion-toggle>
-			</ion-col>
-			<ion-col size="6">
-				<ion-label class="toggle-lbl">Includes Egg</ion-label>
-				<ion-toggle color="success" #egg></ion-toggle>
-			</ion-col>
-		</ion-row>
+    <ion-row class="coupon-lbl">
+      <ion-col size="6">
+        <ion-label class="toggle-lbl">Veg Only</ion-label>
+        <ion-toggle color="success" checked #veg></ion-toggle>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label class="toggle-lbl">Includes Egg</ion-label>
+        <ion-toggle color="success" #egg></ion-toggle>
+      </ion-col>
+    </ion-row>
 
-		<ion-row class="coupon-lbl">
-			<ion-col size="6">
-				<ion-button class="item-category-cls" (click)="onCickItemCategory('best seller')">
-					Best Seller
-				</ion-button>
-			</ion-col>
-			<ion-col size="6">
-				<ion-button class="item-category-cls" (click)="onCickItemCategory('best seller')">
-					Combos
-				</ion-button>
-			</ion-col>
-		</ion-row>
-		<ion-row class="coupon-lbl">
-			<ion-col size="6">
-				<ion-button class="item-category-cls" (click)="onCickItemCategory('best seller')">
-					Main Course
-				</ion-button>
-			</ion-col>
-			<ion-col size="6">
-				<ion-button class="item-category-cls" (click)="onCickItemCategory('best seller')">
-					Bread
-				</ion-button>
-			</ion-col>
-		</ion-row>
-		<ion-row class="coupon-lbl">
-			<ion-col size="6">
-				<ion-button class="item-category-cls" (click)="onCickItemCategory('best seller')">
-					Chinese
-				</ion-button>
-			</ion-col>
-			<ion-col size="6">
-				<ion-button class="item-category-cls" (click)="onCickItemCategory('best seller')">
-					Beverages
-				</ion-button>
-			</ion-col>
-		</ion-row>
-
-	</div>
+    <ion-row class="coupon-lbl">
+      <ion-col size="6">
+        <ion-button
+          class="item-category-cls"
+          (click)="onCickItemCategory('best seller')"
+        >
+          Best Seller
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button
+          class="item-category-cls"
+          (click)="onCickItemCategory('best seller')"
+        >
+          Combos
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="coupon-lbl">
+      <ion-col size="6">
+        <ion-button
+          class="item-category-cls"
+          (click)="onCickItemCategory('best seller')"
+        >
+          Main Course
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button
+          class="item-category-cls"
+          (click)="onCickItemCategory('best seller')"
+        >
+          Bread
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="coupon-lbl">
+      <ion-col size="6">
+        <ion-button
+          class="item-category-cls"
+          (click)="onCickItemCategory('best seller')"
+        >
+          Chinese
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button
+          class="item-category-cls"
+          (click)="onCickItemCategory('best seller')"
+        >
+          Beverages
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>

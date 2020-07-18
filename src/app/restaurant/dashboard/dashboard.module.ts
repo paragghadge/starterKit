@@ -1,13 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { DashboardPageRoutingModule } from './dashboard-routing.module';
-
 import { DashboardPage } from './dashboard.page';
-import { RatingComponent } from 'src/app/common/rating/rating.component';
+
 
 @NgModule({
 	imports: [
@@ -16,7 +13,7 @@ import { RatingComponent } from 'src/app/common/rating/rating.component';
 		IonicModule,
 		DashboardPageRoutingModule
 	],
-	declarations: [DashboardPage, RatingComponent],
+	declarations: [DashboardPage],
 	entryComponents: []
 })
 export class DashboardPageModule { }

@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+import { RouterModule, Routes } from '@angular/router';
 import { TabnavPage } from './tabnav.page';
+
 
 const routes: Routes = [
 	{
 		path: 'tabnav',
 		component: TabnavPage,
 		children: [
+			{
+				path: 'home',
+				// children: [{
+				// 	path: '',
+				loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
+				// }],
+			},
 			{
 				path: 'dashboard',
 				// children: [{
@@ -20,10 +27,11 @@ const routes: Routes = [
 				// children: [{
 				// 	path: '',
 				loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+				//loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
 				// }],
 			},
 			{
-				path: 'dashboard/restaurant-details',
+				path: 'home/restaurant-details',
 				loadChildren: () => import('../restaurant-details/restaurant-details.module').then(m => m.RestaurantDetailsPageModule)
 			},
 			{

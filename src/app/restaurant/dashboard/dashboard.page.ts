@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 enum COLORS {
 	GREY = '#E0E0E0',
@@ -14,36 +13,45 @@ enum COLORS {
 	styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-	public filterTab: string;
-	public rating: number;
-	public isOpen = true;
+	step = 'step1';
+	@ViewChild('step1') step1: any;
+	@ViewChild('step2') step2: any;
+	@ViewChild('step3') step3: any;
+	@ViewChild('sc1') sc1: any;
+	@ViewChild('sc2') sc2: any;
 
 	constructor(
-		public navCtrl: NavController,
+
 	) { }
-
 	ngOnInit() {
-		this.rating = 4;
-	}
 
-	onClickTabs(tab: any) {
-		console.log('tab = ', tab);
-		this.filterTab = tab;
-	}
-
-	ratingChange(data: any) {
-		console.log('emit = ', data);
-	}
-
-	onClickNotification() {
-		console.log('notifications clicked.');
-	}
-	onCLickItem() {
-		this.navCtrl.navigateForward('/tabnav/tabnav/dashboard/restaurant-details');
 	}
 
 	onClickCall(e) {
 		e.stopPropagation();
 		console.log('hi...!');
+	}
+
+	//Step Progress-bar
+	next() {
+		if (this.step === 'step1') {
+			this.step = 'step2';
+			this.step2.nativeElement.classList.remove('active');
+			this.step3.nativeElement.classList.remove('active');
+			this.sc2.nativeElement.classList.remove('active');
+			this.step1.nativeElement.classList.add('active');
+			this.sc1.nativeElement.classList.add('active');
+
+		} else if (this.step === 'step2') {
+			this.step = 'step3';
+			// this.step2.nativeElement.classList.remove('is-active');
+			this.step2.nativeElement.classList.add('active');
+			this.sc2.nativeElement.classList.add('active');
+
+		} else if (this.step === 'step3') {
+			this.step = 'step1';
+			this.step3.nativeElement.classList.add('active');
+
+		}
 	}
 }
