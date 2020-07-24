@@ -66,9 +66,10 @@ export class LoginPage implements OnInit {
 			// });
 			if (data.user_role_profile === 'Customer') {
 				// this.navCtrl.navigateRoot('/user-address');
-				this.navCtrl.navigateRoot('/tabnav');
+				this.navCtrl.navigateRoot('/tabnav/tabnav/home');
 			} else {
-				this.navCtrl.navigateRoot('/add-shop-details');
+				// this.navCtrl.navigateRoot('/add-shop-details');
+				this.navCtrl.navigateRoot('/tabnav/tabnav/vendor/dashboard');
 			}
 		}, err => {
 			console.log('API Error', err.error.message);

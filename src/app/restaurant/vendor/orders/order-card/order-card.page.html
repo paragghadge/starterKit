@@ -1,0 +1,66 @@
+<ion-card class="menu-select-box top-card">
+    <ion-item lines='none' class="item-text-wrap">
+        <ion-avatar slot="start">
+            <img src={{order.customerImage}} />
+        </ion-avatar>
+        <ion-label>
+            <h2>{{order.customerName}}</h2>
+            <p>{{order.address}}</p>
+        </ion-label>
+    </ion-item>
+</ion-card>
+<ion-row class='middle-card'>
+    <ion-col size='8' class='left-card'>
+        <ion-card class='left-card'>
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col class='font-black-color'><b>ORDER No {{order.no}}</b></ion-col>
+                </ion-row>
+                <div class="items-content">
+                    <ion-row *ngFor='let item of order.items; let ind = index' class="ion-nowrap">
+                        <ion-col size='6'><b>{{item.itemName}}</b></ion-col>
+                        <ion-col size='3'><b>Qty : {{item.qty}}</b></ion-col>
+                        <ion-col size='3'><b>₹ {{item.rate}}</b></ion-col>
+                    </ion-row>
+                </div>
+            </ion-grid>
+
+        </ion-card>
+    </ion-col>
+    <ion-col size='4' class='right-card'>
+        <ion-card class='right-card'>
+            <ng-cointainer *ngIf="!order.completed; else completedOrder">
+                <ion-item lines='none completed-order-ongoing'>
+                    <ion-label position="floating">
+                        <p>STATUS</p>
+                    </ion-label>
+                    <ion-select interface="popover" class='status-dropDown'>
+                        <ion-select-option>Dispatch</ion-select-option>
+                        <ion-select-option>Preparing</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ng-cointainer>
+            <ng-template #completedOrder>
+                <ion-label class='completed-order-status label-center-aling'>
+                    <p><b>STATUS</b></p>
+                  </ion-label>
+                  <ion-label position="floating" [color]="order.status === 'Delivered' ? 'success' : 'danger'"
+                    class='completed-order-status label-center-aling'>
+                    <p><b>{{order.status}}</b></p>
+                  </ion-label>
+            </ng-template>
+            <ion-label class='label-center-aling'>
+                <p><b>{{order.orderDate}}</b></p>
+                <p><b>{{order.orderTime}}</b></p>
+                <h6 class='font-black-color'><b>Total</b></h6>
+                <h6 class='font-black-color'><b>₹ {{order.orderAmount}}</b></h6>
+            </ion-label>
+        </ion-card>
+    </ion-col>
+</ion-row>
+<ion-card class='bottom-card'>
+    <ion-item lines='none'>
+        <p class='bottom-label'><b>PAYMENT STATUS : <span class='color-success'>PAID</span></b></p>
+    </ion-item>
+</ion-card>

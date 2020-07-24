@@ -19,16 +19,13 @@ export class ServiceItemsPage implements OnInit {
 	}
 
 	onClickItem(item: any) {
-		console.log('before items : ', this.serviceItems);
 		const index = this.serviceItems.indexOf(item);
-		console.log('index : ', index);
 		if (index > -1) {
 			this.serviceItems.splice(index, 1);
 		} else {
 			this.imageName = 'Selected-item';
 			this.serviceItems.push(item);
 		}
-		console.log('after items : ', this.serviceItems);
 	}
 
 	onClickPayment() {

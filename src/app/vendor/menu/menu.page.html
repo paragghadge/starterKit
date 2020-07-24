@@ -1,0 +1,87 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Menu</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card class='menu-select-box'>
+		<ion-item lines='none'>
+			<ion-label>Menu Type</ion-label>
+			<ion-select interface="popover" [(ngModel)]="selectedMenu" (ionChange)="onMenuSelect(selectedMenu)">
+				<ion-select-option *ngFor="let menu of menus" [value]='menu'>{{menu}}</ion-select-option>
+			</ion-select>
+		</ion-item>
+	</ion-card>
+	<ion-row class="out-of-stock">
+		<ion-item width='100' *ngIf="outOfStockItems > 0" lines='none'>
+			<b>Out of Stock ({{outOfStockItems}})</b>
+		</ion-item>
+	</ion-row>
+	<div *ngIf='menu && menu.subMenuType && menu.subMenuType.length > 0'>
+		<ion-card *ngFor="let subMenu of menu.subMenuType; let ind = index" class="menu-card">
+			<ion-list class="menu-type-header">
+				<ion-row class="heading-margin">
+					<ion-col size="8">
+						<ion-item (click)="toggleGroup(ind)" lines='none'>
+							<ion-label>
+								<ion-text>
+									<h2><b>{{subMenu.name}}</b></h2>
+								</ion-text>
+								<ion-text lines="none">
+									<h3>{{subMenu.items.length}} Items <ion-icon class="padding-icon"
+											name="chevron-down-outline">
+										</ion-icon>
+									</h3>
+								</ion-text>
+							</ion-label>
+						</ion-item>
+					</ion-col>
+					<ion-item lines='none' class="ion-float-right">
+						<ion-icon name="pencil" color='tertiary' class="pencile-icon"
+							(click)='openModal(menu.name, subMenu)'>
+						</ion-icon>
+						<ion-icon name="trash" color='tertiary' class="trash-icon"></ion-icon>
+					</ion-item>
+				</ion-row>
+			</ion-list>
+			<ion-list>
+				<div *ngIf="isGroupShown(ind)">
+					<ion-list>
+						<ion-item *ngFor="let item of subMenu.items" lines='none'>
+							<ion-grid>
+								<ion-row class="heading-margin">
+									<ion-col size="1">
+										<ion-icon [color]="item.category === 'Veg' ? 'success' : 'danger'"
+											name="stop-circle-outline">
+										</ion-icon>
+									</ion-col>
+									<ion-col size="5">
+										{{item.name}}
+									</ion-col>
+									<ion-col size="2">
+										₹ {{item.price}}
+									</ion-col>
+									<ion-col size="1">
+										<ion-toggle color="success" checked='{{item.available}}'></ion-toggle>
+									</ion-col>
+								</ion-row>
+							</ion-grid>
+						</ion-item>
+					</ion-list>
+				</div>
+			</ion-list>
+		</ion-card>
+	</div>
+	<ion-button class='btn-margin top-margin btn-color' expand="block" (click)="onClickAdd()">
+		Add
+	</ion-button>
+	<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+		<ion-fab-button routerLink="/add-menu">
+			<ion-icon name="add"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
+</ion-content>

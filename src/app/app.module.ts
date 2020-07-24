@@ -12,9 +12,10 @@ import { InterceptorService } from './provider/interceptor/interceptor.service';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { EditModalPage } from './vendor/menu/edit-menu/edit-menu-modal.page';
 
 @NgModule({
-	declarations: [AppComponent],
+	declarations: [AppComponent, EditModalPage],
 	entryComponents: [],
 	imports: [
 		FormsModule,

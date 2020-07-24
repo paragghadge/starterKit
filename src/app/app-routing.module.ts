@@ -36,6 +36,18 @@ const routes: Routes = [
 		loadChildren: () => import('./vendor/add-shop-details/add-shop-details.module').then(m => m.AddShopDetailsPageModule)
 	},
 	{
+		path: 'add-menu',
+		loadChildren: () => import('./vendor/menu/add-menu/add-menu.module').then(m => m.AddMenuPageModule)
+	},
+	{
+		path: 'menu',
+		loadChildren: () => import('./vendor/menu/menu.module').then(m => m.MenuPageModule)
+	},
+	{
+		path: 'edit-menu',
+		loadChildren: () => import('./vendor/menu/edit-menu/edit-menu-modal.module').then(m => m.EditMenuModalPageModule)
+	},
+	{
 		path: 'subscription-plan',
 		loadChildren: () => import('./vendor/subscription-plan/subscription-plan.module').then(m => m.SubscriptionPlanPageModule)
 	},
@@ -50,10 +62,15 @@ const routes: Routes = [
 	{
 		path: 'items-modal',
 		loadChildren: () => import('./restaurant/modals/items-modal/items-modal.module').then(m => m.ItemsModalPageModule)
-	},  {
-    path: 'home',
-    loadChildren: () => import('./restaurant/home/home.module').then( m => m.HomePageModule)
-  },
+	},
+	{
+		path: 'home',
+		loadChildren: () => import('./restaurant/home/home.module').then(m => m.HomePageModule)
+	},
+	{
+		path: 'all-orders',
+		loadChildren: () => import('./restaurant/vendor/orders/all-orders/all-orders.module').then(m => m.AllOrdersPageModule)
+	},
 
 
 ];

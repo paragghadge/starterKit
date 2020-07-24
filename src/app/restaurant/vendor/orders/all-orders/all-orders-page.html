@@ -1,0 +1,26 @@
+<ion-content class='all-orders'>
+  <ion-grid style="margin-bottom: -25px;">
+    <ion-row class="" style="padding: 10px;">
+      <ion-col size="6" class="">
+        <h5 class='title-color'><b>All orders</b></h5>
+        <h6><b>Ongoing</b></h6>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ng-container>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let order of ongoingOrders">
+        <order-card [order]="order" class='order-card-width'></order-card>
+      </ion-slide>
+    </ion-slides>
+  </ng-container>
+  <h6 style="padding-left: 20px;"><b>Past</b></h6>
+  <ng-container>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let order of completedOrders">
+        <order-card [order]="order" class='order-card-width'></order-card>
+      </ion-slide>
+    </ion-slides>
+  </ng-container>
+</ion-content>

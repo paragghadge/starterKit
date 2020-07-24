@@ -51,10 +51,24 @@ ion-toolbar {
 	--background: transparent linear-gradient(195deg, #7fa3fe 0%, #995cf9 100%) 0% 0% no-repeat padding-box;
 	box-shadow: -6px -6px 10px;
 }
+
 ion-searchbar {
 	input {
 		border-radius: 20px !important;
 		padding: 0;
 		background-position: 0px !important;
 	}
+}
+
+.btn-color {
+	height: 36px !important;
+	font-size: 16px !important;
+	text-transform: capitalize !important;
+	--background: transparent linear-gradient(195deg, #7fa3fe 0%, #995cf9 100%) 0% 0% no-repeat padding-box;
+	box-shadow: -6px -6px 10px;
+}
+
+.basic-color {
+	--color: #ffffff;
+	--background: transparent linear-gradient(223deg, #7fa3fe 0%, #995cf9 100%) 0% 0% no-repeat padding-box;
 }

@@ -1,0 +1,84 @@
+.h7 {
+	font-size: 14px !important;
+}
+.color-red {
+	color:red !important;
+}
+.container-cls {
+	box-shadow: none;
+}
+
+.btn-margin {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 5%;
+}
+
+.top-margin {
+	margin-top: 20%;
+}
+
+.padding-icon {
+	svg {
+		margin-top: 4px !important;
+	}
+}
+
+.heading-margin {
+	margin-right: -60px !important;
+}
+
+ion-toggle {
+	margin-top: -10px !important;
+}
+
+ion-toggle.ios {
+	margin-top: -5px !important;
+}
+ion-list.menu-type-header {
+	margin-bottom: -25px !important;
+}
+ion-list.ios.menu-type-header {
+	margin-bottom: 0 !important;
+}
+.pencile-icon{
+	height: 20px; 
+	margin-top: 5px;
+}
+.trash-icon{
+	height: 25px;
+}
+
+.title-header {
+	padding-left: 32%;
+}
+
+.item-bottom-border {
+	padding-right: 6%;
+}
+.out-of-stock {
+	margin-left: 60%; 
+	margin-bottom: 0;
+}
+.out-of-stock.ios {
+	margin-bottom: -20px;
+}
+.menu-card {
+	border-radius: 15px;
+    // box-shadow: 3px 3px 15px -5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	box-shadow: 5px 3px 15px -5px rgba(0, 0, 0, 0.19), 0 4px 5px rgba(0, 0, 0, 0.23);
+	margin-bottom: 25px;
+}
+.menu-select-box {
+	border-radius: 5px;
+    box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.19);
+}
+
+.icon-top-padding {
+	padding-top: 20px;
+}
+
+.row-left-right-margin {
+	margin-left: 10px;
+	margin-right: 10px;
+}

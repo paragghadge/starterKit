@@ -1,0 +1,39 @@
+<ion-content class="ion-padding custom-modal">
+	<ion-fab vertical="top" horizontal="end" slot="fixed">
+		<ion-fab-button (click)='closeModal()' class="basic-color">
+			<ion-icon name="close-outline"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
+	<ion-card class="menu-card">
+		<ion-item class='title-header' lines='none'>
+			<h3>Edit</h3>
+		</ion-item>
+		<ion-item class='item-bottom-border'>
+			<h3><b>{{subMenu.name}}</b></h3>
+		</ion-item>
+		<ion-grid>
+			<ion-row *ngFor="let item of subMenu.items; let ind = index" class='row-left-right-margin'>
+				<ion-col size="1" class='icon-top-padding ion-float-right'>
+					<ion-icon [color]="item.category === 'Veg' ? 'success' : 'danger'" name="stop-circle-outline">
+				</ion-icon>
+				</ion-col>
+				<ion-col size='7'>
+					<ion-item>
+						<ion-input [(ngModel)]="item.name"></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col size='3'>
+					<ion-item>
+						<ion-input type='number' [(ngModel)]=item.price></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col size='1' class="icon-top-padding ion-float-left">
+					<ion-icon name="trash" color='tertiary' (click)="onClickDelete(item)"></ion-icon>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		<ion-button class='btn-margin top-margin btn-color' expand="block" (click)="onClickSave()">
+			Save
+		</ion-button>
+	</ion-card>
+</ion-content>

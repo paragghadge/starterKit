@@ -1,0 +1,35 @@
+<ion-header class="ion-margin-bottom">
+  <ion-toolbar>
+    <ion-title>My Orders</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="" style="padding: 10px;">
+      <ion-col size="6" class="">
+        <a class="tab-text-class" [ngClass]="ongoingTab? 'tab-text-class-active':''"
+          (click)="onClickTabs('ongoing')">Ongoing</a>
+      </ion-col>
+      <ion-col size="6" class="" style="text-align: end;">
+        <a class="tab-text-class" [ngClass]="pastTab? 'tab-text-class-active':''" (click)="onClickTabs('past')">Past</a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ng-container *ngIf="ongoingTab">
+    <ion-list *ngFor="let order of ongoingOrders">
+      <order-card [order]="order"></order-card>
+    </ion-list>
+  </ng-container>
+  <ng-container *ngIf="pastTab">
+    <ion-list *ngFor="let order of completedOrders">
+      <order-card [order]="order"></order-card>
+    </ion-list>
+  </ng-container>
+</ion-content>

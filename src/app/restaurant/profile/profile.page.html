@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
 	<ion-toolbar>
 		<ion-title>Profile</ion-title>
 		<ion-buttons slot="primary">
@@ -7,8 +7,72 @@
 			</ion-button>
 		</ion-buttons>
 	</ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
+	<div class="img-container-cls">
+		<img class="profile-img-cls" src="../../../assets/img/offer1.jpg">
+		<p class="profile-name-cls">Pranay Kumar</p>
+	</div>
 
+	<ion-list lines="none ion-margin-top">
+		<ion-item class="profile-items-cls" (click)="onClickItems('/menu')">
+			<ion-icon class="profile-icon-cls" name="cart" slot="start"></ion-icon>
+			<ion-label class="profile-lbl-cls">Menu</ion-label>
+		</ion-item>
+		
+		<ion-item class="profile-items-cls" (click)="onClickItems('/tabnav/tabnav/vendor/orders')">
+			<ion-icon class="profile-icon-cls" name="cart" slot="start"></ion-icon>
+			<ion-label class="profile-lbl-cls">My Orders</ion-label>
+		</ion-item>		
+
+		<ion-item class="profile-items-cls">
+			<ion-icon class="profile-icon-cls" name="card" slot="start"></ion-icon>
+			<ion-label class="profile-lbl-cls">Payment History</ion-label>
+		</ion-item>
+	</ion-list>
+
+	<ion-list lines="none">
+		<ion-item class="profile-items-cls">
+			<ion-icon class="profile-icon-cls" name="barcode" slot="start"></ion-icon>
+			<ion-label class="profile-lbl-cls">Promo codes & Offers</ion-label>
+		</ion-item>
+
+		<ion-item class="profile-items-cls">
+			<ion-icon class="profile-icon-cls" name="people" slot="start"></ion-icon>
+			<ion-label class="profile-lbl-cls">Refer & Earn</ion-label>
+		</ion-item>
+
+		<ion-item class="profile-items-cls">
+			<ion-icon class="profile-icon-cls" name="wallet" slot="start"></ion-icon>
+			<ion-label class="profile-lbl-cls">My Wallet</ion-label>
+		</ion-item>
+	</ion-list>
+
+	<ion-list lines="none">
+		<ion-item class="profile-items-cls" (click)="onClickItems('/tabnav/tabnav/profile/privacy-policy')">
+			<ion-icon class="profile-icon-cls" name="finger-print" slot="start"></ion-icon>
+			<ion-label class="profile-lbl-cls">Privacy Policy</ion-label>
+		</ion-item>
+
+		<ion-item class="profile-items-cls" (click)="onClickItems('/tabnav/tabnav/profile/privacy-policy')">
+			<ion-icon class="profile-icon-cls" name="construct" slot="start"></ion-icon>
+			<ion-label class="profile-lbl-cls">Terms and Condition</ion-label>
+		</ion-item>
+
+		<ion-item class="profile-items-cls" (click)="onClickItems('/tabnav/tabnav/profile/faq')">
+			<ion-icon class="profile-icon-cls" name="help-circle" slot="start"></ion-icon>
+			<ion-label class="profile-lbl-cls">FAQ's</ion-label>
+		</ion-item>
+
+		<ion-item class="profile-items-cls" (click)="onClickItems('/tabnav/tabnav/profile/support')">
+			<ion-icon class="profile-icon-cls" name="person" slot="start"></ion-icon>
+			<ion-label class="profile-lbl-cls">Support</ion-label>
+		</ion-item>
+
+		<ion-item class="profile-items-cls" (click)="logout()">
+			<ion-icon class="profile-icon-cls" name="log-out" slot="start"></ion-icon>
+			<ion-label class="profile-lbl-cls">Logout</ion-label>
+		</ion-item>
+	</ion-list>
 </ion-content>

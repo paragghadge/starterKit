@@ -1,0 +1,62 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Menu</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<form [formGroup]="addMenuForm">
+		<ion-card class='menu-select-box'>
+			<ion-item lines='none'>
+				<ion-label>Menu Type</ion-label>
+				<ion-select interface="popover" formControlName="menuType">
+				  <ion-select-option *ngFor="let menu of menus" >{{menu}}</ion-select-option>
+				</ion-select>
+			  </ion-item>
+		</ion-card>
+		<ion-card class='menu-select-box'>
+			<ion-item lines='none'>
+				<ion-label>Sub-Menu Type</ion-label>
+				<ion-select interface="popover" formControlName="subMenuType">
+				  <ion-select-option *ngFor="let subMenu of subMenus" >{{subMenu}}</ion-select-option>
+				</ion-select>
+			  </ion-item>
+		</ion-card>
+		<ion-card class='menu-select-box menu-select-box'>
+			<ion-item lines='none'>
+				<ion-input placeholder="Enter Item Name" formControlName="name"></ion-input>
+			</ion-item>
+		</ion-card>
+		<ion-radio-group value="Veg" formControlName="category">
+			<ion-row >
+				<ion-col>
+					<ion-item lines='none'>
+					<ion-label>Veg</ion-label>
+					<ion-radio slot="start" value="Veg"></ion-radio>
+					</ion-item>
+				</ion-col>
+				<ion-col>
+					<ion-item lines='none'>
+					<ion-label>Non-veg</ion-label>
+					<ion-radio slot="start" value="Non-veg"></ion-radio>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+		</ion-radio-group>
+		<ion-card class='menu-select-box'>
+			<ion-item lines='none'>
+				<ion-input placeholder="Enter Price" type='number' formControlName="price"></ion-input>
+			</ion-item>
+		</ion-card>
+		
+		<ion-button class='btn-margin top-margin btn-color' expand="block" [disabled]="addMenuForm.invalid" (click)="onClickAdd()">
+			Add
+		</ion-button>
+		<ion-button class='btn-margin btn-color' expand="block" routerLink="/menu">
+			View Menu Card
+		</ion-button>
+	</form>
+</ion-content>

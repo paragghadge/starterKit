@@ -1,0 +1,106 @@
+.tab-text-class {
+    color: #050505;
+    font-weight: 700;
+}
+
+.tab-text-class-active {
+    border-bottom: 2px solid #838fff;
+}
+
+.status-dropDown {
+    padding-left: 0px;
+}
+
+.label-center-aling {
+    text-align: center;
+}
+
+.top-card {
+    margin-bottom: 0px; 
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+
+.middle-card {
+    padding: 0px; 
+}
+
+.left-card {
+    margin-right: 0px !important;
+    margin-top: 0px !important;
+    height: 150px;
+    padding-left: 0px;
+    padding-right: 1px;
+    margin-bottom: 0px;
+    // overflow-y: inherit;
+}
+
+.right-card {
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    height: 150px;    
+    padding : 5px 0px;
+    margin-bottom: 0px;
+}
+
+.bottom-card {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.bottom-card.ios {
+    margin-bottom: 5px;
+}
+
+.bottom-label {
+    font-size: 12px;
+    color: gray;
+}
+
+.color-success {
+    color: #47dc82;
+}
+
+.font-black-color {
+    color: black;
+}
+
+.items-content {
+    height: 120px;
+    overflow-y: auto;
+}
+ion-list.ios{
+    display: inline;
+}
+.completed-order-status.ios{
+    p {
+        margin: 5px;
+    }
+}
+.completed-order-ongoing.ios {
+    margin-top: -5px;
+}
+
+.title-color {
+    color: #838fff;
+}
+
+.order-card-width {
+    width:100%;
+    height:100%;
+    margin-bottom: 30px;
+}
+
+.all-orders {
+    ion-slides {
+        margin-bottom: -25px;
+        .swiper-zoom-container {
+            text-align: left;
+        }
+        .swiper-slide {
+            width: 100%; 
+        }
+    }
+} 

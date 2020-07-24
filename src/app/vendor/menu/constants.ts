@@ -1,0 +1,2 @@
+export const menuTypes = [ 'Indian', 'Chinese', 'Italian', 'Maxican']
+export const subMenuTypes = [ 'Starters', 'Main Course', 'Rice & Biryani', 'Breads', 'Snacks', 'Quick Bites', 'Deserts & Beverage']
