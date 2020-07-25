@@ -63,6 +63,10 @@
     color: #47dc82;
 }
 
+.color-danger {
+    color: #eb445a;
+}
+
 .font-black-color {
     color: black;
 }
@@ -71,14 +75,21 @@
     height: 120px;
     overflow-y: auto;
 }
+
+.dashboard-item-content {
+    height: 85px;
+}
+
 ion-list.ios{
     display: inline;
 }
+
 .completed-order-status.ios{
     p {
         margin: 5px;
     }
 }
+
 .completed-order-ongoing.ios {
     margin-top: -5px;
 }

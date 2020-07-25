@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError, map, timeout } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,7 +14,9 @@ export class CommonApiService {
 	loaderToShow: any;
 	private data: any;
 
-	constructor(private http: HttpClient, private loadingCtrl: LoadingController) { }
+	constructor(
+		private http: HttpClient, private loadingCtrl: LoadingController,
+		public toastCtrl: ToastController) { }
 
 	setValue(data: any) {
 		this.data = data;
@@ -85,6 +87,26 @@ export class CommonApiService {
 		setTimeout(() => {
 			this.loadingCtrl.dismiss();
 		}, 1000);
+	}
+
+	postDataPayment(url, requestJSON) {
+		return this.postPaymentAPIs(url, requestJSON);
+	}
+
+	postPaymentAPIs(url, inputData) {
+		return this.http.post(url, inputData).pipe(
+			retry(3),
+			catchError(this.handleError)
+		);
+	}
+
+	async showToast(message: string) {
+		const toast = await this.toastCtrl.create({
+			message,
+			duration: 2000,
+			position: 'bottom'
+		});
+		toast.present();
 	}
 
 }

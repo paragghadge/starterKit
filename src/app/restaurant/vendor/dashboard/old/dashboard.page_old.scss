@@ -1,0 +1,54 @@
+@import "../../payment-history/payment-history.page.scss";
+@import "../../modals/items-modal/items-modal.page.scss";
+.restaurant-small-class {
+	width: 30% !important;
+}
+.restaurant-tem-cls {
+	width: 69% !important;
+}
+.count {
+	margin: 10px auto !important;
+	width: 80px !important;
+}
+.distance-cls {
+	color: #888bfc;
+}
+.order-count-header-cls {
+	height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14px;
+	font-weight: bold;
+}
+.toggle-lbl {
+	vertical-align: top;
+	font-size: 14px;
+	line-height: 28px;
+	color: #ff0000;
+}
+ion-toggle {
+	padding: 10px;
+}
+.restaurant-order-cls {
+	height: 50px !important;
+	text-align: center !important;
+	margin-bottom: 10px !important;
+	width: 45% !important;
+}
+.accept-reject-container {
+	display: flex !important;
+	margin-left: 10% !important;
+}
+.accept-cls {
+	margin: 0;
+	color: #10ff48 !important;
+}
+.reject-cls {
+	margin: 0;
+	color: #ff0000 !important;
+}
+.order-sub-cls {
+	margin-top: 6px !important;
+	font-size: 16px !important;
+	font-weight: 500 !important;
+}

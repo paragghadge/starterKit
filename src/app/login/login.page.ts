@@ -61,6 +61,7 @@ export class LoginPage implements OnInit {
 			console.log('login - success API', data);
 			this.commonAPIService.hideLoader();
 			this.storage.set('UserData', JSON.stringify(data));
+			localStorage.setItem('sid', data.sid);
 			// this.storage.get('tmp_id').then((val) => {
 			// 	console.log('Your user details is', JSON.parse(val));
 			// });

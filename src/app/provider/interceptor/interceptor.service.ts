@@ -21,14 +21,15 @@ export class InterceptorService implements HttpInterceptor {
 	constructor() { }
 
 	intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-		request = request.clone({
-			setHeaders: {
-				'Access-Control-Allow-Origin': '*',
-				'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, HEAD, DELETE',
-				enctype: 'multipart/form-data; boundary=----WebKitFormBoundaryuL67FWkv1CA'
-			}
-		});
+		this.localToken = localStorage.getItem('sid');
+		console.log('sid === ', this.localToken);
+		// request = request.clone({
+		// 	setHeaders: {
+		// 		'Access-Control-Allow-Origin': '*',
+		// 		'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, HEAD, DELETE',
+		// 		enctype: 'multipart/form-data; boundary=----WebKitFormBoundaryuL67FWkv1CA'
+		// 	}
+		// });
 
 		if (!request.headers.has('Content-Type')) {
 			request = request.clone({
@@ -41,6 +42,15 @@ export class InterceptorService implements HttpInterceptor {
 		request = request.clone({
 			headers: request.headers.set('Accept', 'application/json')
 		});
+
+		if (this.localToken) {
+			request = request.clone({
+				setHeaders: {
+					//sid: this.localToken
+					sid: 'f5f82f56e798cf8e18d08ab5111f6f164857d6db5f7d80215c4138e8'
+				}
+			});
+		}
 
 		return next.handle(request).pipe(
 			map((event: HttpEvent<any>) => {

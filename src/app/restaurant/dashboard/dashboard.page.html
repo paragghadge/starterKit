@@ -111,7 +111,7 @@
         </div>
       </div>
       <div style="display: flex;" style="width: 94%; margin: 0 auto;">
-        <div class="paynow-class" *ngFor="let num of [1]">
+        <div class="paynow-class" *ngFor="let num of [1]" (click)="payNow()">
           <ion-icon class="icon ion-ios-clock-outline" name="cart"></ion-icon>
           <span class="text">Pay Now</span>
         </div>

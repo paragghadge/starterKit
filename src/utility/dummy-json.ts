@@ -1,5 +1,6 @@
 export const dummyOrders = [
   {
+    orderId: 100,
     customerName: 'Mahesh Lawate',
     customerImage: '../../../../assets/img/avatar-2.png',
     address: 'Guru Ganesh, Dange chowk, Pune',
@@ -49,6 +50,7 @@ export const dummyOrders = [
     orderAmount: '535'
   },
   {
+    orderId: 101,
     customerName: 'Sanket Sonawane',
     customerImage: '../../../../assets/img/avatar-1.png',
     address: 'Aura ville, Bavdhan, Pune',
@@ -83,6 +85,7 @@ export const dummyOrders = [
     orderAmount: '780'
   },
   {
+    orderId: 102,
     customerName: 'Ajinkya Thakare',
     customerImage: '../../../../assets/img/avatar-3.png',
     address: 'Krutika, dahanukar colony, Kothrud, Pune',

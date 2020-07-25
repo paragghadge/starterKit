@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { CommonApiService } from 'src/app/provider/commonAPI/common-api.service';
 
 enum COLORS {
 	GREY = '#E0E0E0',
@@ -21,7 +22,7 @@ export class DashboardPage implements OnInit {
 	@ViewChild('sc2') sc2: any;
 
 	constructor(
-
+		public commonApiService: CommonApiService
 	) { }
 	ngOnInit() {
 
@@ -53,5 +54,33 @@ export class DashboardPage implements OnInit {
 			this.step3.nativeElement.classList.add('active');
 
 		}
+	}
+
+	payNow() {
+		const orderData = {
+			"ref_doctype": "Sales Order",
+			"ref_docname": "SAL-ORD-2020-00001",
+			"amount": 105,
+			"payment_type": "Order Payment",
+			"party_email": "sagartiparadi@gmail.com",
+			"party_name": "Sagar",
+			"party_phone": "9096265754"
+		};
+
+		this.commonApiService.showLoader('Loading in...');
+		this.commonApiService.postDataPayment("http://147.139.6.184/api/resource/Cashfree Payment Request Log", orderData)
+			.subscribe((data: any) => {
+				console.log('postPaymentAPIs - success API', data);
+				this.commonApiService.hideLoader();
+
+			}, err => {
+				console.log('postPaymentAPIs API Error', err.error.message);
+				this.commonApiService.showToast(err.error.message);
+				this.commonApiService.hideLoader();
+				console.log(err);
+				if (err.name === 'TimeoutError') {
+					console.log('TimeoutError');
+				}
+			});
 	}
 }

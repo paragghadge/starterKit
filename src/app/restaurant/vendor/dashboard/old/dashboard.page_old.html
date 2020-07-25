@@ -1,0 +1,68 @@
+<ion-header class="ion-margin-bottom">
+	<ion-toolbar>
+		<ion-title>Dashboard</ion-title>
+		<ion-buttons slot="primary">
+			<ion-button>
+				<ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+	<ion-row class="order-count-header-cls">
+		<ion-col size="4">
+			<label>2 New Orders</label>
+		</ion-col>
+		<ion-col size="8">
+			<ion-label class="toggle-lbl">Stop Accepting Orders</ion-label>
+			<ion-toggle color="danger" #egg></ion-toggle>
+		</ion-col>
+	</ion-row>
+
+	<div *ngFor="let num of [1]">
+		<div class="disp-flex">
+			<div class="restaurant-tem-cls disp-flex">
+				<!-- <div class="restaurant-container"> -->
+				<!-- <ion-label> -->
+				<span class="header-cls">
+					Vaishali Restaurant
+				</span>
+				<span class="distance-cls">1.0 KM Away</span>
+
+				<p class="text-cls">Ekbote Colony, Gorpade Peth Pune</p>
+
+				<!-- </ion-label> -->
+				<!-- </div> -->
+			</div>
+			<div lines="none" class="restaurant-small-class">
+				<p class="status-class">
+					Set Food Preparation Time (In minutes)
+				</p>
+
+				<div class="count">
+					<ion-icon class="add-cls ion-float-left" name="remove-circle" (click)="removeTime()">
+					</ion-icon>
+					<span class="item-count">
+						{{preparationTime}}
+					</span>
+					<ion-icon class="add-cls ion-float-right" name="add-circle" (click)="addTime()"></ion-icon>
+				</div>
+			</div>
+		</div>
+		<div class="accept-reject-container">
+			<div class="restaurant-order-cls reject-cls">
+				<p class=" order-sub-cls">
+					<ion-icon name="close-outline"></ion-icon>
+					Reject Order
+				</p>
+			</div>
+			<div class="restaurant-order-cls accept-cls">
+				<p class="order-sub-cls ">
+					<ion-icon name="checkmark-outline"></ion-icon>
+					Accept Order
+				</p>
+			</div>
+		</div>
+	</div>
+</ion-content>
